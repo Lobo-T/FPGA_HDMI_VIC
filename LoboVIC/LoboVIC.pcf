@@ -1,0 +1,2756 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Mar 16 15:43:59 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+PROHIBIT = SITE "P39";
+PROHIBIT = SITE "P69";
+PROHIBIT = SITE "P64";
+PROHIBIT = SITE "P65";
+PROHIBIT = SITE "P70";
+PROHIBIT = SITE "P74";
+PROHIBIT = SITE "P60";
+PROHIBIT = SITE "P38";
+PROHIBIT = SITE "P144";
+COMP "UART_RX" LOCATE = SITE "P23" LEVEL 1;
+COMP "UART_TX" LOCATE = SITE "P22" LEVEL 1;
+COMP "TMDSn<0>" LOCATE = SITE "P50" LEVEL 1;
+COMP "TMDSn<1>" LOCATE = SITE "P55" LEVEL 1;
+COMP "TMDSn<2>" LOCATE = SITE "P66" LEVEL 1;
+COMP "TMDSp<0>" LOCATE = SITE "P51" LEVEL 1;
+COMP "TMDSp<1>" LOCATE = SITE "P56" LEVEL 1;
+COMP "TMDSp<2>" LOCATE = SITE "P67" LEVEL 1;
+COMP "btn1" LOCATE = SITE "P133" LEVEL 1;
+COMP "btn2" LOCATE = SITE "P132" LEVEL 1;
+COMP "btn3" LOCATE = SITE "P131" LEVEL 1;
+COMP "clk_50M" LOCATE = SITE "P21" LEVEL 1;
+COMP "clk12usb" LOCATE = SITE "P83" LEVEL 1;
+COMP "dilswitch<0>" LOCATE = SITE "P134" LEVEL 1;
+COMP "dilswitch<1>" LOCATE = SITE "P137" LEVEL 1;
+COMP "dilswitch<2>" LOCATE = SITE "P138" LEVEL 1;
+COMP "dilswitch<3>" LOCATE = SITE "P139" LEVEL 1;
+COMP "dilswitch<4>" LOCATE = SITE "P140" LEVEL 1;
+COMP "dilswitch<5>" LOCATE = SITE "P141" LEVEL 1;
+COMP "dilswitch<6>" LOCATE = SITE "P142" LEVEL 1;
+COMP "dilswitch<7>" LOCATE = SITE "P143" LEVEL 1;
+COMP "led<0>" LOCATE = SITE "P44" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "P45" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "P46" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "P47" LEVEL 1;
+COMP "led<4>" LOCATE = SITE "P57" LEVEL 1;
+COMP "led<5>" LOCATE = SITE "P58" LEVEL 1;
+COMP "led<6>" LOCATE = SITE "P59" LEVEL 1;
+COMP "led<7>" LOCATE = SITE "P61" LEVEL 1;
+COMP "TMDSn_clock" LOCATE = SITE "P40" LEVEL 1;
+COMP "TMDSp_clock" LOCATE = SITE "P41" LEVEL 1;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[29].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[29].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[27].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[27].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[26].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[26].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[25].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[25].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[24].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[24].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[20].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[20].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[19].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[19].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[18].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[18].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[17].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[17].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[16].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[16].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKA;
+TIMEGRP clockgen_clkout1 = BEL "cpuabus_reg_0" BEL "cpuabus_reg_1" BEL
+        "cpuabus_reg_2" BEL "cpuabus_reg_3" BEL "cpuabus_reg_4" BEL
+        "cpuabus_reg_5" BEL "cpuabus_reg_6" BEL "cpuabus_reg_7" BEL
+        "cpuabus_reg_8" BEL "cpuabus_reg_9" BEL "cpuabus_reg_10" BEL
+        "cpuabus_reg_11" BEL "cpuabus_reg_12" BEL "cpuabus_reg_13" BEL
+        "cpuabus_reg_14" BEL "cpuabus_reg_15" BEL "cpuWrite_reg" BEL
+        "uart_tx_data_0" BEL "uart_tx_data_1" BEL "uart_tx_data_2" BEL
+        "uart_tx_data_3" BEL "uart_tx_data_4" BEL "uart_tx_data_5" BEL
+        "uart_tx_data_6" BEL "uart_tx_data_7" BEL "ledstat_0" BEL "ledstat_1"
+        BEL "ledstat_2" BEL "ledstat_3" BEL "ledstat_4" BEL "ledstat_5" BEL
+        "ledstat_6" BEL "ledstat_7" BEL "clockgen/clkout2_buf" BEL
+        "uart1/fifo_rx_unit/full_reg" BEL "uart1/fifo_tx_unit/full_reg" BEL
+        "uart1/baud_gen_unit/r_reg_3" BEL "uart1/baud_gen_unit/r_reg_2" BEL
+        "uart1/baud_gen_unit/r_reg_1" BEL "uart1/baud_gen_unit/r_reg_0" BEL
+        "uart1/uart_rx_unit/state_reg_FSM_FFd1" BEL
+        "uart1/uart_rx_unit/state_reg_FSM_FFd2" BEL
+        "uart1/uart_rx_unit/n_reg_2" BEL "uart1/uart_rx_unit/n_reg_1" BEL
+        "uart1/uart_rx_unit/n_reg_0" BEL "uart1/uart_rx_unit/s_reg_3" BEL
+        "uart1/uart_rx_unit/s_reg_2" BEL "uart1/uart_rx_unit/s_reg_1" BEL
+        "uart1/uart_rx_unit/s_reg_0" BEL "uart1/uart_rx_unit/b_reg_7" BEL
+        "uart1/uart_rx_unit/b_reg_6" BEL "uart1/uart_rx_unit/b_reg_5" BEL
+        "uart1/uart_rx_unit/b_reg_4" BEL "uart1/uart_rx_unit/b_reg_3" BEL
+        "uart1/uart_rx_unit/b_reg_2" BEL "uart1/uart_rx_unit/b_reg_1" BEL
+        "uart1/uart_rx_unit/b_reg_0" BEL
+        "uart1/uart_tx_unit/state_reg_FSM_FFd1" BEL
+        "uart1/uart_tx_unit/state_reg_FSM_FFd2" BEL
+        "uart1/uart_tx_unit/n_reg_2" BEL "uart1/uart_tx_unit/n_reg_1" BEL
+        "uart1/uart_tx_unit/n_reg_0" BEL "uart1/uart_tx_unit/s_reg_3" BEL
+        "uart1/uart_tx_unit/s_reg_2" BEL "uart1/uart_tx_unit/s_reg_1" BEL
+        "uart1/uart_tx_unit/s_reg_0" BEL "uart1/uart_tx_unit/b_reg_7" BEL
+        "uart1/uart_tx_unit/b_reg_6" BEL "uart1/uart_tx_unit/b_reg_5" BEL
+        "uart1/uart_tx_unit/b_reg_4" BEL "uart1/uart_tx_unit/b_reg_3" BEL
+        "uart1/uart_tx_unit/b_reg_2" BEL "uart1/uart_tx_unit/b_reg_1" BEL
+        "uart1/uart_tx_unit/b_reg_0" BEL "uart1/uart_tx_unit/tx_reg" BEL
+        "cpu1/state_FSM_FFd1" BEL "cpu1/state_FSM_FFd2" BEL
+        "cpu1/state_FSM_FFd3" BEL "cpu1/state_FSM_FFd4" BEL
+        "cpu1/state_FSM_FFd5" BEL "cpu1/state_FSM_FFd6" BEL
+        "cpu1/state_FSM_FFd8" BEL "cpu1/state_FSM_FFd9" BEL
+        "cpu1/state_FSM_FFd7" BEL "cpu1/state_FSM_FFd10" BEL
+        "cpu1/state_FSM_FFd11" BEL "cpu1/state_FSM_FFd13" BEL
+        "cpu1/state_FSM_FFd14" BEL "cpu1/state_FSM_FFd12" BEL
+        "cpu1/state_FSM_FFd15" BEL "cpu1/state_FSM_FFd16" BEL
+        "cpu1/state_FSM_FFd18" BEL "cpu1/state_FSM_FFd19" BEL
+        "cpu1/state_FSM_FFd17" BEL "cpu1/state_FSM_FFd20" BEL
+        "cpu1/state_FSM_FFd21" BEL "cpu1/state_FSM_FFd22" BEL
+        "cpu1/state_FSM_FFd23" BEL "cpu1/state_FSM_FFd24" BEL
+        "cpu1/state_FSM_FFd25" BEL "cpu1/state_FSM_FFd27" BEL
+        "cpu1/state_FSM_FFd28" BEL "cpu1/state_FSM_FFd26" BEL
+        "cpu1/state_FSM_FFd29" BEL "cpu1/state_FSM_FFd30" BEL
+        "cpu1/state_FSM_FFd32" BEL "cpu1/state_FSM_FFd33" BEL
+        "cpu1/state_FSM_FFd31" BEL "cpu1/state_FSM_FFd34" BEL
+        "cpu1/state_FSM_FFd35" BEL "cpu1/state_FSM_FFd37" BEL
+        "cpu1/state_FSM_FFd38" BEL "cpu1/state_FSM_FFd36" BEL
+        "cpu1/state_FSM_FFd39" BEL "cpu1/state_FSM_FFd40" BEL
+        "cpu1/state_FSM_FFd41" BEL "cpu1/state_FSM_FFd42" BEL
+        "cpu1/state_FSM_FFd43" BEL "cpu1/state_FSM_FFd44" BEL
+        "cpu1/state_FSM_FFd46" BEL "cpu1/state_FSM_FFd47" BEL
+        "cpu1/state_FSM_FFd45" BEL "cpu1/state_FSM_FFd48" BEL
+        "cpu1/state_FSM_FFd49" BEL "cpu1/state_FSM_FFd50" BEL "cpu1/ABH_7" BEL
+        "cpu1/ABH_6" BEL "cpu1/ABH_5" BEL "cpu1/ABH_4" BEL "cpu1/ABH_3" BEL
+        "cpu1/ABH_2" BEL "cpu1/ABH_1" BEL "cpu1/ABH_0" BEL "cpu1/ABL_7" BEL
+        "cpu1/ABL_6" BEL "cpu1/ABL_5" BEL "cpu1/ABL_4" BEL "cpu1/ABL_3" BEL
+        "cpu1/ABL_2" BEL "cpu1/ABL_1" BEL "cpu1/ABL_0" BEL "cpu1/adj_bcd" BEL
+        "cpu1/adc_bcd" BEL "cpu1/N" BEL "cpu1/V" BEL "cpu1/Z" BEL
+        "cpu1/cond_code_2" BEL "cpu1/cond_code_1" BEL "cpu1/cond_code_0" BEL
+        "cpu1/src_reg_1" BEL "cpu1/src_reg_0" BEL "cpu1/IRHOLD_7" BEL
+        "cpu1/IRHOLD_6" BEL "cpu1/IRHOLD_5" BEL "cpu1/IRHOLD_4" BEL
+        "cpu1/IRHOLD_3" BEL "cpu1/IRHOLD_2" BEL "cpu1/IRHOLD_1" BEL
+        "cpu1/IRHOLD_0" BEL "cpu1/backwards" BEL "cpu1/PC_15" BEL "cpu1/PC_14"
+        BEL "cpu1/PC_13" BEL "cpu1/PC_12" BEL "cpu1/PC_11" BEL "cpu1/PC_10"
+        BEL "cpu1/PC_9" BEL "cpu1/PC_8" BEL "cpu1/PC_7" BEL "cpu1/PC_6" BEL
+        "cpu1/PC_5" BEL "cpu1/PC_4" BEL "cpu1/PC_3" BEL "cpu1/PC_2" BEL
+        "cpu1/PC_1" BEL "cpu1/PC_0" BEL "cpu1/sed" BEL "cpu1/cld" BEL
+        "cpu1/sei" BEL "cpu1/cli" BEL "cpu1/clv" BEL "cpu1/plp" BEL "cpu1/clc"
+        BEL "cpu1/sec" BEL "cpu1/bit_ins" BEL "cpu1/op_3" BEL "cpu1/op_2" BEL
+        "cpu1/op_1" BEL "cpu1/op_0" BEL "cpu1/php" BEL "cpu1/shift_right" BEL
+        "cpu1/compare" BEL "cpu1/rotate" BEL "cpu1/adc_sbc" BEL "cpu1/inc" BEL
+        "cpu1/shift" BEL "cpu1/write_back" BEL "cpu1/store" BEL
+        "cpu1/load_only" BEL "cpu1/dst_reg_1" BEL "cpu1/dst_reg_0" BEL
+        "cpu1/index_y" BEL "cpu1/load_reg" BEL "cpu1/DIHOLD_6" BEL
+        "cpu1/DIHOLD_5" BEL "cpu1/DIHOLD_4" BEL "cpu1/DIHOLD_3" BEL
+        "cpu1/DIHOLD_2" BEL "cpu1/DIHOLD_1" BEL "cpu1/DIHOLD_0" BEL
+        "cpu1/ALU/AI7" BEL "cpu1/ALU/BI7" BEL "cpu1/ALU/CO" BEL
+        "cpu1/ALU/OUT_7" BEL "cpu1/ALU/OUT_6" BEL "cpu1/ALU/OUT_5" BEL
+        "cpu1/ALU/OUT_4" BEL "cpu1/ALU/OUT_3" BEL "cpu1/ALU/OUT_2" BEL
+        "cpu1/ALU/OUT_1" BEL "cpu1/ALU/OUT_0" BEL "cpu1/ALU/HC" BEL "cpu1/I"
+        BEL "cpu1/D" BEL "cpu1/C" BEL "cpu1/IRHOLD_valid" BEL "cpu1/res" BEL
+        "uart1/fifo_rx_unit/r_ptr_reg_1" BEL "uart1/fifo_rx_unit/r_ptr_reg_0"
+        BEL "uart1/fifo_rx_unit/w_ptr_reg_1" BEL
+        "uart1/fifo_rx_unit/w_ptr_reg_0" BEL "uart1/fifo_rx_unit/empty_reg"
+        BEL "uart1/fifo_tx_unit/r_ptr_reg_1" BEL
+        "uart1/fifo_tx_unit/r_ptr_reg_0" BEL "uart1/fifo_tx_unit/w_ptr_reg_1"
+        BEL "uart1/fifo_tx_unit/w_ptr_reg_0" BEL
+        "uart1/fifo_tx_unit/empty_reg" BEL "cpu1/state_FSM_FFd44_1" BEL
+        "cpu1/state_FSM_FFd43_1" BEL "cpu1/state_FSM_FFd44_2" BEL
+        "cpu1/state_FSM_FFd27_1" BEL "cpu1/state_FSM_FFd40_1" BEL
+        "cpu1/state_FSM_FFd7_1" BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe_1"
+        BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe_2"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[29].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[27].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[26].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[25].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[24].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[20].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[19].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[18].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[17].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[16].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<28>"
+        BEL "cpu1/Mram_AXYS1" BEL "cpu1/Mram_AXYS2" BEL "cpu1/Mram_AXYS3" BEL
+        "cpu1/Mram_AXYS4" BEL "cpu1/Mram_AXYS5" BEL "cpu1/Mram_AXYS6" BEL
+        "cpu1/Mram_AXYS7" BEL "cpu1/Mram_AXYS8" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg21/DP" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg21/SP" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg22/DP" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg22/SP" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg21/DP" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg21/SP" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg22/DP" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg22/SP" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMA_D1" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMA" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMB_D1" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMB" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMC_D1" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMC" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMD_D1" BEL
+        "uart1/fifo_rx_unit/Mram_array_reg1_RAMD" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMA_D1" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMA" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMB_D1" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMB" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMC_D1" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMC" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMD_D1" BEL
+        "uart1/fifo_tx_unit/Mram_array_reg1_RAMD";
+TIMEGRP DCM_TMDS_CLKFX = BEL "BUFG_TMDSp" BEL "HDMIout/TMDS_shift_blue_9" BEL
+        "HDMIout/TMDS_shift_blue_8" BEL "HDMIout/TMDS_shift_blue_7" BEL
+        "HDMIout/TMDS_shift_blue_6" BEL "HDMIout/TMDS_shift_blue_5" BEL
+        "HDMIout/TMDS_shift_blue_4" BEL "HDMIout/TMDS_shift_blue_3" BEL
+        "HDMIout/TMDS_shift_blue_2" BEL "HDMIout/TMDS_shift_blue_1" BEL
+        "HDMIout/TMDS_shift_blue_0" BEL "HDMIout/TMDS_shift_green_9" BEL
+        "HDMIout/TMDS_shift_green_8" BEL "HDMIout/TMDS_shift_green_7" BEL
+        "HDMIout/TMDS_shift_green_6" BEL "HDMIout/TMDS_shift_green_5" BEL
+        "HDMIout/TMDS_shift_green_4" BEL "HDMIout/TMDS_shift_green_3" BEL
+        "HDMIout/TMDS_shift_green_2" BEL "HDMIout/TMDS_shift_green_1" BEL
+        "HDMIout/TMDS_shift_green_0" BEL "HDMIout/TMDS_shift_red_9" BEL
+        "HDMIout/TMDS_shift_red_8" BEL "HDMIout/TMDS_shift_red_7" BEL
+        "HDMIout/TMDS_shift_red_6" BEL "HDMIout/TMDS_shift_red_5" BEL
+        "HDMIout/TMDS_shift_red_4" BEL "HDMIout/TMDS_shift_red_3" BEL
+        "HDMIout/TMDS_shift_red_2" BEL "HDMIout/TMDS_shift_red_1" BEL
+        "HDMIout/TMDS_shift_red_0" BEL "HDMIout/TMDS_shift_load" BEL
+        "HDMIout/TMDS_mod10_1" BEL "HDMIout/TMDS_mod10_0" BEL
+        "HDMIout/TMDS_mod10_2" BEL "HDMIout/TMDS_mod10_3";
+PIN ODDR2_clk12usb_pins<1> = BEL "ODDR2_clk12usb" PINNAME CK0;
+PIN ODDR2_clk12usb_pins<2> = BEL "ODDR2_clk12usb" PINNAME CK1;
+TIMEGRP clockgen_clkout0 = BEL "clockgen/clkout1_buf" PIN
+        "ODDR2_clk12usb_pins<1>" PIN "ODDR2_clk12usb_pins<2>" PIN
+        "ODDR2_clk12usb_pins<1>" PIN "ODDR2_clk12usb_pins<2>";
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[29].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[29].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[27].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[27].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[26].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[26].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[25].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[25].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[24].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[24].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[20].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[20].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[19].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[19].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[18].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[18].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[17].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[17].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[16].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[16].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN
+        vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>
+        = BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram"
+        PINNAME CLKB;
+PIN ODDR2_TMDSclock_pins<1> = BEL "ODDR2_TMDSclock" PINNAME CK0;
+PIN ODDR2_TMDSclock_pins<2> = BEL "ODDR2_TMDSclock" PINNAME CK1;
+TIMEGRP pixclk = BEL "HDMIout/vmemabus_15" BEL "HDMIout/vmemabus_14" BEL
+        "HDMIout/vmemabus_13" BEL "HDMIout/vmemabus_12" BEL
+        "HDMIout/vmemabus_11" BEL "HDMIout/vmemabus_10" BEL
+        "HDMIout/vmemabus_9" BEL "HDMIout/vmemabus_8" BEL "HDMIout/vmemabus_7"
+        BEL "HDMIout/vmemabus_6" BEL "HDMIout/vmemabus_5" BEL
+        "HDMIout/vmemabus_4" BEL "HDMIout/vmemabus_3" BEL "HDMIout/vmemabus_2"
+        BEL "HDMIout/vmemabus_1" BEL "HDMIout/vmemabus_0" BEL
+        "HDMIout/CounterY_8" BEL "HDMIout/CounterY_7" BEL "HDMIout/CounterY_6"
+        BEL "HDMIout/CounterY_5" BEL "HDMIout/CounterY_4" BEL
+        "HDMIout/CounterY_2" BEL "HDMIout/CounterX_7" BEL "HDMIout/CounterX_6"
+        BEL "HDMIout/CounterX_5" BEL "HDMIout/CounterX_0" BEL
+        "HDMIout/Xmod8_2" BEL "HDMIout/Xmod8_1" BEL "HDMIout/Xmod8_0" BEL
+        "HDMIout/Ymod8_2" BEL "HDMIout/Ymod8_1" BEL "HDMIout/DrawArea" BEL
+        "HDMIout/vSync" BEL "HDMIout/hSync" BEL
+        "HDMIout/encode_B/balance_acc_3" BEL "HDMIout/encode_B/balance_acc_2"
+        BEL "HDMIout/encode_B/balance_acc_1" BEL
+        "HDMIout/encode_B/balance_acc_0" BEL "HDMIout/encode_B/TMDS_7" BEL
+        "HDMIout/encode_B/TMDS_5" BEL "HDMIout/encode_G/balance_acc_3" BEL
+        "HDMIout/encode_G/balance_acc_2" BEL "HDMIout/encode_G/balance_acc_1"
+        BEL "HDMIout/encode_G/balance_acc_0" BEL "HDMIout/encode_G/TMDS_7" BEL
+        "HDMIout/encode_G/TMDS_5" BEL "HDMIout/encode_G/TMDS_3" BEL
+        "HDMIout/encode_G/TMDS_0" BEL "HDMIout/encode_R/balance_acc_3" BEL
+        "HDMIout/encode_R/balance_acc_2" BEL "HDMIout/encode_R/balance_acc_1"
+        BEL "HDMIout/encode_R/balance_acc_0" BEL "HDMIout/encode_R/TMDS_7" BEL
+        "HDMIout/encode_R/TMDS_5" BEL "HDMIout/encode_R/TMDS_3" BEL
+        "HDMIout/encode_R/TMDS_0" BEL "pixclk_BUFG" BEL "HDMIout/CounterY_9"
+        BEL "HDMIout/CounterY_3" BEL "HDMIout/CounterY_1" BEL
+        "HDMIout/CounterY_0" BEL "HDMIout/CounterX_9" BEL "HDMIout/CounterX_8"
+        BEL "HDMIout/CounterX_4" BEL "HDMIout/CounterX_3" BEL
+        "HDMIout/CounterX_2" BEL "HDMIout/CounterX_1" BEL "HDMIout/Ymod8_0"
+        BEL "HDMIout/encode_B/TMDS_9" BEL "HDMIout/encode_B/TMDS_8" BEL
+        "HDMIout/encode_B/TMDS_6" BEL "HDMIout/encode_B/TMDS_4" BEL
+        "HDMIout/encode_G/TMDS_9" BEL "HDMIout/encode_G/TMDS_8" BEL
+        "HDMIout/encode_G/TMDS_6" BEL "HDMIout/encode_G/TMDS_4" BEL
+        "HDMIout/encode_G/TMDS_2" BEL "HDMIout/encode_R/TMDS_9" BEL
+        "HDMIout/encode_R/TMDS_8" BEL "HDMIout/encode_R/TMDS_6" BEL
+        "HDMIout/encode_R/TMDS_4" BEL "HDMIout/encode_R/TMDS_2" BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_1"
+        BEL
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_2"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[29].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[27].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[26].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[25].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[24].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[20].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[19].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[18].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[17].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[16].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        PIN
+        "vmem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM18.ram_pins<29>"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram128/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram128/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram128/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram128/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram110/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram110/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram110/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram110/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram109/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram109/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram109/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram109/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram111/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram111/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram111/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram111/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram108/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram108/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram108/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram108/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram107/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram107/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram107/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram107/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram106/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram106/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram106/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram106/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram105/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram105/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram105/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram105/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram104/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram104/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram104/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram104/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram103/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram103/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram103/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram103/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram101/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram101/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram101/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram101/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram100/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram100/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram100/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram100/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram102/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram102/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram102/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram102/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram99/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram99/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram99/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram99/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram98/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram98/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram98/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram98/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram97/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram97/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram97/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram97/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram96/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram96/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram96/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram96/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram95/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram95/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram95/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram95/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram94/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram94/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram94/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram94/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram92/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram92/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram92/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram92/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram91/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram91/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram91/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram91/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram93/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram93/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram93/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram93/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram74/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram74/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram74/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram74/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram73/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram73/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram73/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram73/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram72/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram72/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram72/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram72/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram71/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram71/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram71/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram71/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram70/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram70/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram70/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram70/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram69/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram69/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram69/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram69/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram68/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram68/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram68/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram68/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram67/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram67/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram67/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram67/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram65/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram65/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram65/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram65/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram64/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram64/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram64/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram64/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram66/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram66/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram66/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram66/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram63/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram63/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram63/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram63/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram62/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram62/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram62/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram62/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram61/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram61/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram61/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram61/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram60/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram60/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram60/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram60/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram59/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram59/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram59/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram59/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram58/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram58/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram58/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram58/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram56/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram56/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram56/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram56/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram55/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram55/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram55/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram55/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram57/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram57/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram57/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram57/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram54/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram54/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram54/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram54/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram37/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram37/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram37/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram37/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram36/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram36/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram36/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram36/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram35/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram35/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram35/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram35/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram34/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram34/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram34/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram34/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram33/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram33/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram33/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram33/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram32/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram32/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram32/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram32/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram31/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram31/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram31/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram31/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram29/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram29/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram29/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram29/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram28/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram28/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram28/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram28/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram30/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram30/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram30/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram30/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram27/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram27/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram27/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram27/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram26/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram26/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram26/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram26/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram25/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram25/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram25/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram25/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram24/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram24/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram24/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram24/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram23/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram23/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram23/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram23/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram22/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram22/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram22/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram22/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram20/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram20/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram20/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram20/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram19/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram19/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram19/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram19/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram21/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram21/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram21/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram21/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram18/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram18/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram18/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram18/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram17/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram17/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram17/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram17/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/DP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/SP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/SP.LOW"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/DP.HIGH"
+        BEL
+        "charmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram275/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram275/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram275/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram275/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram274/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram274/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram274/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram274/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram272/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram272/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram272/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram272/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram271/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram271/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram271/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram271/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram273/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram273/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram273/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram273/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram270/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram270/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram270/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram270/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram269/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram269/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram269/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram269/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram267/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram267/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram267/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram267/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram266/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram266/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram266/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram266/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram268/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram268/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram268/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram268/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram265/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram265/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram265/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram265/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram264/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram264/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram264/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram264/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram262/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram262/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram262/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram262/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram261/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram261/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram261/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram261/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram263/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram263/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram263/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram263/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram260/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram260/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram260/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram260/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram237/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram237/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram237/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram237/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram236/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram236/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram236/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram236/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram238/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram238/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram238/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram238/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram235/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram235/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram235/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram235/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram234/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram234/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram234/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram234/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram232/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram232/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram232/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram232/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram231/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram231/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram231/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram231/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram233/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram233/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram233/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram233/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram230/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram230/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram230/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram230/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram229/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram229/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram229/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram229/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram227/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram227/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram227/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram227/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram226/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram226/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram226/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram226/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram228/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram228/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram228/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram228/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram225/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram225/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram225/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram225/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram224/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram224/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram224/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram224/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram223/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram223/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram223/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram223/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram201/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram201/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram201/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram201/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram200/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram200/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram200/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram200/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram199/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram199/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram199/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram199/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram197/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram197/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram197/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram197/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram196/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram196/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram196/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram196/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram198/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram198/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram198/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram198/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram195/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram195/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram195/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram195/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram194/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram194/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram194/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram194/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram192/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram192/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram192/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram192/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram191/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram191/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram191/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram191/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram193/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram193/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram193/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram193/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram190/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram190/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram190/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram190/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram189/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram189/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram189/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram189/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram187/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram187/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram187/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram187/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram186/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram186/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram186/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram186/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram188/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram188/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram188/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram188/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram164/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram164/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram164/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram164/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram162/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram162/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram162/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram162/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram161/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram161/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram161/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram161/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram163/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram163/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram163/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram163/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram160/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram160/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram160/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram160/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram159/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram159/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram159/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram159/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram157/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram157/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram157/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram157/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram156/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram156/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram156/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram156/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram158/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram158/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram158/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram158/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram155/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram155/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram155/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram155/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram154/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram154/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram154/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram154/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram152/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram152/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram152/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram152/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram151/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram151/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram151/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram151/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram153/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram153/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram153/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram153/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram150/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram150/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram150/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram150/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram149/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram149/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram149/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram149/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram127/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram126/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram125/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram124/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram122/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram121/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram123/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram120/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram119/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram117/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram116/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram118/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram115/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram114/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram112/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram113/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram90/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram89/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram87/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram86/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram88/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram85/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram84/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram82/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram81/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram83/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram80/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram79/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram77/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram76/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram78/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram75/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram52/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram51/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram53/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram50/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram49/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram47/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram46/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram48/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram45/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram44/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram42/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram41/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram43/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram40/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram39/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram38/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram16/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram15/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram14/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram12/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram11/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram13/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram10/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram9/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram7/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram6/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram8/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram4/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram3/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram5/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram1/DP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/SP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/SP.LOW"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/DP.HIGH"
+        BEL
+        "colmem/U0/xst_options.dist_mem_inst/gen_dp_ram.dpram_inst/Mram_ram2/DP.LOW"
+        PIN "ODDR2_TMDSclock_pins<1>" PIN "ODDR2_TMDSclock_pins<2>" PIN
+        "ODDR2_TMDSclock_pins<1>" PIN "ODDR2_TMDSclock_pins<2>";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN DCM_TMDS_inst_pins<4> = BEL "DCM_TMDS_inst" PINNAME CLKIN;
+PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1_pins<0> = BEL
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1" PINNAME DIVCLK;
+PIN clockgen/pll_base_inst/PLL_ADV_pins<2> = BEL
+        "clockgen/pll_base_inst/PLL_ADV" PINNAME CLKIN1;
+TIMEGRP tnm_clk50 = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "DCM_TMDS_inst_pins<4>" PIN
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1_pins<0>" PIN
+        "clockgen/pll_base_inst/PLL_ADV_pins<2>";
+TS_clk50 = PERIOD TIMEGRP "tnm_clk50" 20 ns HIGH 50%;
+TS_DCM_TMDS_CLKFX = PERIOD TIMEGRP "DCM_TMDS_CLKFX" TS_clk50 / 5 HIGH 50%;
+TS_pixclk = PERIOD TIMEGRP "pixclk" TS_clk50 * 2 HIGH 50%;
+TS_clockgen_clkout1 = PERIOD TIMEGRP "clockgen_clkout1" TS_clk50 / 0.1 HIGH
+        50%;
+TS_clockgen_clkout0 = PERIOD TIMEGRP "clockgen_clkout0" TS_clk50 / 0.24 HIGH
+        50%;
+SCHEMATIC END;
+

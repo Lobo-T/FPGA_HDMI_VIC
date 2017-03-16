@@ -1,0 +1,577 @@
+
+WARNING: The Trce option "-ucf" is either illegal or not supported by projNav and hence will not be added in the strategy file(maplogicopt.xds) created by Smartxplorer.
+
+Command Line : 
+-------------
+map C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ngd -ol high -xe n -logic_opt on -t 2 -w -p xc6slx9-tqg144-2 -o LoboVIC_map.ncd C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf
+
+Release 14.7 - Map P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Using target part "6slx9tqg144-2".
+Mapping design into LUTs...
+Writing file LoboVIC_map.ngm...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 8 secs 
+Total CPU  time at the beginning of Placer: 7 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:f642421b) REAL time: 8 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:f642421b) REAL time: 9 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:f642421b) REAL time: 9 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+(Checksum:121b3679) REAL time: 11 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:121b3679) REAL time: 11 secs 
+
+Phase 6.30  Global Clock Region Assignment
+Phase 6.30  Global Clock Region Assignment (Checksum:121b3679) REAL time: 11 secs 
+
+Phase 7.3  Local Placement Optimization
+Phase 7.3  Local Placement Optimization (Checksum:121b3679) REAL time: 11 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:121b3679) REAL time: 11 secs 
+
+Phase 9.8  Global Placement
+................
+.................................................................................
+...............................................................................
+Phase 9.8  Global Placement (Checksum:5593b987) REAL time: 16 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:5593b987) REAL time: 16 secs 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:518e6e71) REAL time: 18 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:518e6e71) REAL time: 18 secs 
+
+Phase 13.34  Placement Validation
+Phase 13.34  Placement Validation (Checksum:4b223e5f) REAL time: 18 secs 
+
+Total REAL time to Placer completion: 18 secs 
+Total CPU  time to Placer completion: 16 secs 
+Running physical synthesis...
+
+Physical synthesis completed.
+Running post-placement packing...
+Writing output files...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    2
+Slice Logic Utilization:
+  Number of Slice Registers:                   362 out of  11,440    3%
+    Number used as Flip Flops:                 362
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,905 out of   5,720   33%
+    Number used as logic:                      853 out of   5,720   14%
+      Number using O6 output only:             722
+      Number using O5 output only:              17
+      Number using O5 and O6:                  114
+      Number used as ROM:                        0
+    Number used as Memory:                   1,044 out of   1,440   72%
+      Number used as Dual Port RAM:          1,040
+        Number using O6 output only:         1,032
+        Number using O5 output only:             0
+        Number using O5 and O6:                  8
+      Number used as Single Port RAM:            4
+        Number using O6 output only:             0
+        Number using O5 output only:             0
+        Number using O5 and O6:                  4
+      Number used as Shift Register:             0
+    Number used exclusively as route-thrus:      8
+      Number with same-slice register load:      4
+      Number with same-slice carry load:         4
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   551 out of   1,430   38%
+  Number of MUXCYs used:                        64 out of   2,860    2%
+  Number of LUT Flip Flop pairs used:        1,909
+    Number with an unused Flip Flop:         1,591 out of   1,909   83%
+    Number with an unused LUT:                   4 out of   1,909    1%
+    Number of fully used LUT-FF pairs:         314 out of   1,909   16%
+    Number of unique control sets:              39
+    Number of slice register sites lost
+      to control set restrictions:             166 out of  11,440    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        31 out of     102   30%
+    Number of LOCed IOBs:                       31 out of      31  100%
+    IOB Flip Flops:                              2
+    IOB Master Pads:                             4
+    IOB Slave Pads:                              4
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                        32 out of      32  100%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 2 out of      32    6%
+    Number used as BUFIO2s:                      2
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             2 out of      32    6%
+    Number used as BUFIO2FBs:                    2
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       6 out of      16   37%
+    Number used as BUFGs:                        6
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   2 out of     200    1%
+    Number used as OLOGIC2s:                     2
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                6.56
+
+Peak Memory Usage:  402 MB
+Total REAL time to MAP completion:  21 secs 
+Total CPU time to MAP completion:   19 secs 
+
+Mapping completed.
+See MAP report file "LoboVIC_map.mrp" for details.
+
+Command Line : 
+-------------
+par C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ngd -ol high -xe n -w LoboVIC.ncd C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf
+
+Release 14.7 - par P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+
+
+Constraints file: C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf.
+Loading device for application Rf_Device from file '6slx9.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+   "LoboVIC" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.23 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+Slice Logic Utilization:
+  Number of Slice Registers:                   362 out of  11,440    3%
+    Number used as Flip Flops:                 362
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,905 out of   5,720   33%
+    Number used as logic:                      853 out of   5,720   14%
+      Number using O6 output only:             722
+      Number using O5 output only:              17
+      Number using O5 and O6:                  114
+      Number used as ROM:                        0
+    Number used as Memory:                   1,044 out of   1,440   72%
+      Number used as Dual Port RAM:          1,040
+        Number using O6 output only:         1,032
+        Number using O5 output only:             0
+        Number using O5 and O6:                  8
+      Number used as Single Port RAM:            4
+        Number using O6 output only:             0
+        Number using O5 output only:             0
+        Number using O5 and O6:                  4
+      Number used as Shift Register:             0
+    Number used exclusively as route-thrus:      8
+      Number with same-slice register load:      4
+      Number with same-slice carry load:         4
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   551 out of   1,430   38%
+  Number of MUXCYs used:                        64 out of   2,860    2%
+  Number of LUT Flip Flop pairs used:        1,909
+    Number with an unused Flip Flop:         1,591 out of   1,909   83%
+    Number with an unused LUT:                   4 out of   1,909    1%
+    Number of fully used LUT-FF pairs:         314 out of   1,909   16%
+    Number of slice register sites lost
+      to control set restrictions:               0 out of  11,440    0%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        31 out of     102   30%
+    Number of LOCed IOBs:                       31 out of      31  100%
+    IOB Flip Flops:                              2
+    IOB Master Pads:                             4
+    IOB Slave Pads:                              4
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                        32 out of      32  100%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 2 out of      32    6%
+    Number used as BUFIO2s:                      2
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             2 out of      32    6%
+    Number used as BUFIO2FBs:                    2
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       6 out of      16   37%
+    Number used as BUFGs:                        6
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   2 out of     200    1%
+    Number used as OLOGIC2s:                     2
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
+
+WARNING:Par:288 - The signal uart1/fifo_rx_unit/Mram_array_reg1_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal uart1/fifo_tx_unit/Mram_array_reg1_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 16154 unrouted;      REAL time: 4 secs 
+
+Phase  2  : 9072 unrouted;      REAL time: 5 secs 
+
+Phase  3  : 3155 unrouted;      REAL time: 10 secs 
+
+Phase  4  : 3155 unrouted; (Setup:0, Hold:3021, Component Switching Limit:0)     REAL time: 10 secs 
+
+Updating file: LoboVIC.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:2684, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:2684, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:2684, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:2684, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Total REAL time to Router completion: 17 secs 
+Total CPU time to Router completion: 16 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|              clkCPU |  BUFGMUX_X2Y2| No   |  141 |  0.117     |  1.508      |
++---------------------+--------------+------+------+------------+-------------+
+|         pixclk_BUFG |  BUFGMUX_X2Y1| No   |  332 |  0.750     |  2.141      |
++---------------------+--------------+------+------+------------+-------------+
+|            clk_TMDS | BUFGMUX_X2Y12| No   |    6 |  0.096     |  1.489      |
++---------------------+--------------+------+------+------------+-------------+
+|            clk12out |  BUFGMUX_X2Y4| No   |    2 |  0.062     |  2.031      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Number of Timing Constraints that were not applied: 2
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_DCM_TMDS_CLKFX = PERIOD TIMEGRP "DCM_T | SETUP       |     0.005ns|     3.995ns|       0|           0
+  MDS_CLKFX" TS_clk50 / 5 HIGH 50%          | HOLD        |     0.073ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_clk50 = PERIOD TIMEGRP "tnm_clk50" 20  | MINLOWPULSE |    12.000ns|     8.000ns|       0|           0
+  ns HIGH 50%                               |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_pixclk = PERIOD TIMEGRP "pixclk" TS_cl | SETUP       |    15.611ns|    24.389ns|       0|           0
+  k50 * 2 HIGH 50%                          | HOLD        |     0.438ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_clockgen_clkout0 = PERIOD TIMEGRP "clo | MINPERIOD   |    80.667ns|     2.666ns|       0|           0
+  ckgen_clkout0" TS_clk50 / 0.24 HIGH       |             |            |            |        |            
+     50%                                    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_clockgen_clkout1 = PERIOD TIMEGRP "clo | SETUP       |   184.401ns|    15.599ns|       0|           0
+  ckgen_clkout1" TS_clk50 / 0.1 HIGH        | HOLD        |     0.389ns|            |       0|           0
+    50%                                     |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_clk50
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_clk50                       |     20.000ns|      8.000ns|     19.975ns|            0|            0|            0|     20423992|
+| TS_DCM_TMDS_CLKFX             |      4.000ns|      3.995ns|          N/A|            0|            0|          103|            0|
+| TS_pixclk                     |     40.000ns|     24.389ns|          N/A|            0|            0|     19914792|            0|
+| TS_clockgen_clkout1           |    200.000ns|     15.599ns|          N/A|            0|            0|       509097|            0|
+| TS_clockgen_clkout0           |     83.333ns|      2.666ns|          N/A|            0|            0|            0|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 18 secs 
+Total CPU time to PAR completion: 17 secs 
+
+Peak Memory Usage:  363 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 4
+Number of info messages: 0
+
+Writing design to file LoboVIC.ncd
+
+
+
+PAR done!
+
+Command Line : 
+-------------
+trce C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ngd C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf -xml C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.twx -v 3 -s 2 -n 3 -fastpaths -ucf LoboVIC.ucf -o C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.twr
+
+Release 14.7 - Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+
+Loading device for application Rf_Device from file '6slx9.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\.
+   "LoboVIC" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe
+C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ncd
+C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf -xml
+C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.twx -v 3 -s 2 -n
+3 -fastpaths -ucf LoboVIC.ucf -o
+C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.twr
+
+
+Design file:              LoboVIC.ncd
+Physical constraint file: LoboVIC.pcf
+Device,speed:             xc6slx9,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths option. All paths that are not constrained will be reported in
+   the unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on a 50 Ohm transmission line loading model.  For the details of
+   this model, and for more information on accounting for different loading conditions, please see the device datasheet.
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0 (Setup/Max: 0, Hold: 0)
+
+Constraints cover 20423992 paths, 0 nets, and 9313 connections
+
+Design statistics:
+   Minimum period:  24.389ns (Maximum frequency:  41.002MHz)
+
+
+Analysis completed Thu Mar 16 14:44:42 2017
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Number of warnings: 0
+Number of info messages: 3
+Total time: 5 secs 
+
+Command Line : 
+-------------
+xpwr C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ngd C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf -l 10 -o C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pwr
+
+Release 14.7 - xpwr P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Loading device for application Rf_Device from file '6slx9.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\.
+   "LoboVIC" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+
+INFO:Power:1693 - 
+   --------------------------------------------------------------
+                         The power estimate will be calculated using PRODUCTION
+   data.
+   --------------------------------------------------------------
+
+Design load 20% completeDesign load 25% completeDesign load 30% completeDesign load 60% completeDesign load 95% completeDesign load 100% completeWARNING:PowerEstimator:270 - Power estimate is considered inaccurate. To see details, generate an advanced report with the "-v" switch.
+Running Vector-less Activity Propagation
+............
+Finished Running Vector-less Activity Propagation
+Finished Running Vector-less Activity Propagation 0 secs 
+Power report saved as C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pwr.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                                                                                     Xilinx XPower Analyzer                                                                                                                                     |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Release                | 14.7 - P.20131013 (nt64)                                                                                                                                                                                                                                              |
+| Command Line           | C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\xpwr.exe C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ncd C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf -l 10 -o C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pwr  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.  Settings
+1.1.  Project
+-------------------------------------------------------------------------------------------------
+|                                            Project                                            |
+-------------------------------------------------------------------------------------------------
+| Design File               | C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.ncd |
+| Settings File             | NA                                                                |
+| Physical Constraints File | C:\Users\Trond\FPGA\LoboVIC\smartxplorer_results\run2\LoboVIC.pcf |
+| Simulation Activity File  | NA                                                                |
+| Design Nets Matched       | NA                                                                |
+| Simulation Nets Matched   | NA                                                                |
+-------------------------------------------------------------------------------------------------
+
+1.2.  Device
+-------------------------------------------------
+|                    Device                     |
+-------------------------------------------------
+| Family           | Spartan6                   |
+| Part             | xc6slx9                    |
+| Package          | tqg144                     |
+| Temp Grade       | C-Grade                    |
+| Process          | Typical                    |
+| Speed Grade      | -2                         |
+| Characterization | Production,v1.3,2011-05-04 |
+-------------------------------------------------
+
+2.  Summary
+2.1.  On-Chip Power Summary
+-----------------------------------------------------------------------------
+|                           On-Chip Power Summary                           |
+-----------------------------------------------------------------------------
+|        On-Chip        | Power (mW) |  Used  | Available | Utilization (%) |
+-----------------------------------------------------------------------------
+| Clocks                |      15.28 |      2 |    ---    |       ---       |
+| Logic                 |       1.09 |   1905 |      5720 |              33 |
+| Signals               |       2.79 |   1396 |    ---    |       ---       |
+| IOs                   |      56.38 |     31 |       102 |              30 |
+| BlockRAM/FIFO         |       1.49 |  ---   |    ---    |       ---       |
+|   8K BlockRAM         |       0.00 |      0 |        64 |               0 |
+|   16K BlockRAM        |       1.49 |     32 |        32 |             100 |
+| DCMs                  |      18.81 |      1 |         4 |              25 |
+| PLLs                  |     113.03 |      1 |         2 |              50 |
+| Static Power          |      20.18 |        |           |                 |
+| Total                 |     229.04 |        |           |                 |
+-----------------------------------------------------------------------------
+
+2.3.  Power Supply Summary
+----------------------------------------------------------
+|                  Power Supply Summary                  |
+----------------------------------------------------------
+|                      | Total  | Dynamic | Static Power |
+----------------------------------------------------------
+| Supply Power (mW)    | 241.60 | 78.28   | 163.32       |
+----------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+|                                            Power Supply Currents                                            |
+---------------------------------------------------------------------------------------------------------------
+|     Supply Source     | Supply Voltage | Total Current (mA) | Dynamic Current (mA) | Quiescent Current (mA) |
+---------------------------------------------------------------------------------------------------------------
+| Vccint                |          1.200 |              26.47 |                21.15 |                   5.32 |
+| Vccaux                |          3.300 |              41.98 |                13.42 |                  28.56 |
+| Vcco33                |          3.300 |              21.61 |                 2.61 |                  19.00 |
+---------------------------------------------------------------------------------------------------------------
+
+
+Analysis completed: Thu Mar 16 14:44:53 2017
+----------------------------------------------------------------
+
+Number of error messages: 0
+Number of warning messages: 1
+Number of info messages: 1
+

@@ -1,0 +1,24 @@
+
+# PlanAhead Generated IO constraints 
+
+NET "TMDSp_clock" IOSTANDARD = TMDS_33;
+NET "clk_50M" IOSTANDARD = LVCMOS33;
+NET "TMDSp[0]" IOSTANDARD = TMDS_33;
+NET "TMDSp[1]" IOSTANDARD = TMDS_33;
+NET "TMDSp[2]" IOSTANDARD = TMDS_33;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk_50M" SLEW = SLOW;
+
+# PlanAhead Generated physical constraints 
+
+NET "TMDSp[2]" LOC = P51;
+NET "TMDSn[2]" LOC = P50;
+NET "TMDSn[1]" LOC = P66;
+NET "TMDSp[1]" LOC = P67;
+NET "TMDSn[0]" LOC = P69;
+NET "TMDSp[0]" LOC = P70;
+NET "TMDSp_clock" LOC = P56;
+NET "TMDSn_clock" LOC = P55;
+NET "clk_50M" LOC = P21;

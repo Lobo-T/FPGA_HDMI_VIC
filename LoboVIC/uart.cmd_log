@@ -1,0 +1,2 @@
+vhdtdtfi -lang verilog -prj LoboVIC -o C:/Users/Trond/FPGA/LoboVIC/uart.tfi -lib work C:/Users/Trond/FPGA/LoboVIC//uart.v -module uart -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj LoboVIC -o C:/Users/Trond/FPGA/LoboVIC/uart.tfi -lib work C:/Users/Trond/FPGA/LoboVIC//uart.v -module uart -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

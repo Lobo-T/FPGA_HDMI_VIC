@@ -1,0 +1,4 @@
+vhdtdtfi -lang verilog -prj LoboVIC -o C:/Users/Trond/LoboVIC/HDMIoutput.tfi -lib work C:/Users/Trond/LoboVIC//HDMIoutput.v -module HDMIoutput -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj LoboVIC -o C:/Users/Trond/LoboVIC/HDMIoutput.tfi -lib work C:/Users/Trond/LoboVIC//HDMIoutput.v -module HDMIoutput -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj LoboVIC -o C:/Users/Trond/FPGA/LoboVIC/HDMIoutput.tfi -lib work C:/Users/Trond/FPGA/LoboVIC//HDMIoutput.v -module HDMIoutput -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj LoboVIC -o C:/Users/Trond/FPGA/LoboVIC/HDMIoutput.tfi -lib work C:/Users/Trond/FPGA/LoboVIC//HDMIoutput.v -module HDMIoutput -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
