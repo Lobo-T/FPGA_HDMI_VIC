@@ -1,5 +1,4 @@
 # Output products list for <colour_mem>
-_xmsgs\pn_parser.xmsgs
 colour_mem.asy
 colour_mem.gise
 colour_mem.mif

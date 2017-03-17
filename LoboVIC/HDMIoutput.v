@@ -37,7 +37,8 @@ module HDMIoutput(
 
 
 ////////////////////////////////////////////////////////////////////////
-reg [9:0] CounterX=798, CounterY=523;
+//reg [9:0] CounterX=798, CounterY=523;
+reg [9:0] CounterX=798, CounterY=524;
 reg hSync, vSync, DrawArea;
 always @(posedge pixclk) DrawArea <= (CounterX<640) && (CounterY<480);
 
@@ -47,7 +48,9 @@ always @(posedge pixclk) if(CounterX==799) CounterY <= (CounterY==524) ? 1'b0 : 
 always @(posedge pixclk) hSync <= (CounterX>=656) && (CounterX<752);
 always @(posedge pixclk) vSync <= (CounterY>=490) && (CounterY<492);
 
-////////////////
+///////////////////////
+//160x120 bitmap modus
+//
 // 4-dobling X og Y
 //reg [1:0] Xmod4=0;
 //reg [1:0] Ymod4=1;
@@ -73,6 +76,7 @@ always @(posedge pixclk) vSync <= (CounterY>=490) && (CounterY<492);
 //	else
 //		vmemabus <= vmemabus;
 //end
+
 ///////
 // 640x480 character mode 8x8 chars
 reg [2:0] Xmod8=0;
@@ -100,25 +104,17 @@ begin
 		vmemabus <= vmemabus;
 end
 
-//always @(posedge pixclk)
-//	$display("%d %d : %d:%d :::X:%d:Y:%d", CounterX,CounterY,vmemabus,vmemdbus,Xmod8,Ymod8);
+always @(posedge pixclk)
+	$display("X:%d Y:%d : ab:%d:db:%d :  Xm:%d:Ym:%d: Pixout: %b: RGB: %b:%b:%b", CounterX,CounterY,vmemabus,vmemdbus,Xmod8,Ymod8,pixout,red,green,blue);
 	
-//wire [10:0] chrabus;
-//wire [7:0] chrdbus;
-//charrom_CP865 charrom (
-//  .a(chrabus), // input [10 : 0] a
-//  .spo(chrdbus) // output [7 : 0] spo
-//);
 
-
-assign colabus = vmemabus/8;
+assign colabus = vmemabus;
 
 //wire [7:0] testvmemd = 82;
-//assign chrabus = (testvmemd*8)+((CounterY)%8);
-assign chrabus = (vmemdbus*8)+((CounterY)%8);
-wire [7:0] pixout;
-wire [7:0] rowshift = chrdbus << ((CounterX)%8);
-assign pixout = (rowshift & 8'b10000000)?
+//assign chrabus = (testvmemd*8)+(CounterY % 8);
+assign chrabus = (vmemdbus*8)+(CounterY%8);
+wire [7:0] rowshift = chrdbus << (CounterX%8);
+wire [7:0] pixout = (rowshift & 8'b10000000)?
 					 coldbus :
 					 8'b0;
 					 
@@ -128,6 +124,7 @@ RGB332_converter conv1(.RGB332(pixout), .RED(red), .GREEN(green), .BLUE(blue));
 //RGB332_converter conv1(.RGB332(vmemdbus), .RED(red), .GREEN(green), .BLUE(blue));
 
 ////////////////////////////////////////////////////////////////////////
+//Kopiert fra http://www.fpga4fun.com/HDMI.html
 wire [9:0] TMDS_red, TMDS_green, TMDS_blue;
 TMDS_encoder encode_R(.clk(pixclk), .VD(red  ), .CD(2'b00)        , .VDE(DrawArea), .TMDS(TMDS_red));
 TMDS_encoder encode_G(.clk(pixclk), .VD(green), .CD(2'b00)        , .VDE(DrawArea), .TMDS(TMDS_green));
@@ -146,6 +143,9 @@ begin
 	TMDS_shift_blue  <= TMDS_shift_load ? TMDS_blue  : TMDS_shift_blue [9:1];	
 	TMDS_mod10 <= (TMDS_mod10==4'd9) ? 4'd0 : TMDS_mod10+4'd1;
 end
+//Slutt "lånt" kode
+/////////////
+
 
 assign TMDS[2] = TMDS_shift_red  [0];
 assign TMDS[1] = TMDS_shift_green  [0];
@@ -155,6 +155,7 @@ endmodule
 
 
 ////////////////////////////////////////////////////////////////////////
+//Kopiert fra http://www.fpga4fun.com/HDMI.html
 module TMDS_encoder(
 	input clk,
 	input [7:0] VD,  // video data (red, green or blue)
@@ -180,14 +181,14 @@ always @(posedge clk) TMDS <= VDE ? TMDS_data : TMDS_code;
 always @(posedge clk) balance_acc <= VDE ? balance_acc_new : 4'h0;
 endmodule
 
-
+//Slutt "lånt" kode
 ////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////
 //Converter fra RGB 3:3:2 format til 24bit (en byte per farge)
 module RGB332_converter(
 	input [7:0] RGB332,
-	output reg [7:0] RED,GREEN,BLUE
+	output reg [7:0] RED=0,GREEN=0,BLUE=0
 );
 
 	always @*

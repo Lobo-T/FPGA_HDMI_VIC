@@ -32,7 +32,7 @@ module LoboVIC(
 	
 
 //////////Clocking	
-wire clk_TMDS, DCM_TMDS_CLKFX, pixclk, pixclkout, tmdsclk0;  // 50MHz x 5 = 250MHz
+wire clk_TMDS, DCM_TMDS_CLKFX, pixclk, pixclkout, tmdsclk0;
 wire clk_50M_bufg;
 
 //Generer 25 Mhz HDMI pikselklokke og 250Mhz HDMI bitklokke
@@ -110,6 +110,8 @@ wire cpuWrite;					//Er høy når CPUen skriver, motsatt av en fysisk 6502.
 
 wire [10:0] chrabusV;		//Character ROM adressebuss for video output
 wire [7:0] chrdbusV;			//Character ROM databuss for video output
+
+//Skal egentlig være 12:0, tom for ram.  Må dele opp blokkramen.
 wire [10:0] colabusV;		//Farge RAM for video out
 wire [7:0] coldbusV;
 

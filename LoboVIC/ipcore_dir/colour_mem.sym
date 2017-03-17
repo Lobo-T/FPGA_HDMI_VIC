@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="colour_mem">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2017-3-16T14:42:50</timestamp>
+    <timestamp>2017-3-16T20:13:12</timestamp>
     <pin polarity="Input" x="0" y="80" name="a[12:0]" />
     <pin polarity="Input" x="0" y="112" name="d[7:0]" />
     <pin polarity="Input" x="0" y="144" name="dpra[12:0]" />
