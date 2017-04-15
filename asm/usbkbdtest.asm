@@ -5,10 +5,11 @@
 #include io.asm
 #include max3421.asm
 
+	*=0000
+
 ;Zeropage pointer adresse for funksjonskall
 	loAdr = $00
 	hiAdr = $01
-
 ;Disse brukes kun under USB konfigurasjon og kan gjenbrukes senere
 	counter1 = $02
 	usbBuffer = $03		; 64 bytes
@@ -16,11 +17,13 @@
 	usbThisDescriptor = $43
 	usbNextDescriptor = $44
 	usbKbdOK = $45
+	.dsb $46
+CursorPos:
+	.byt 0,2	;512
 
 
-	*=0000
 	;*= $2000
-	.dsb $8000-*,$45
+	.dsb $8000-*
 
 
 	LDX #$FF  ;Kjent verdi for toppen av stacken
@@ -37,7 +40,7 @@ tekstslutt:
 serloop
 	LDA #1
 	AND 65004	;Sjekk om UART FIFO er full
-	BNE serloop	;Vent p? UART
+	BNE serloop	;Vent på UART
 	LDA tekststart,x
 	STA 65003
 	LDA #1
@@ -736,6 +739,7 @@ KbdKeyArray: .byt 0,0,0,0,0,0,0,0
 ;---------------------------------------------------------------------------------
 ;--------------------MAIN---------------------------------------------------------
 ;---------------------------------------------------------------------------------
+
 MAIN:
 	CLI	;Enable interrupts
 
@@ -753,6 +757,13 @@ loop1
 	JSR kbdrd
 	BCS KbdNext
 	JSR sendUARTchar
+	LDY #0
+	STA (CursorPos),y
+IncCursorPos:
+	INC CursorPos
+	BNE IncCursorPosNext
+	INC	CursorPos+1
+IncCursorPosNext:
 
 KbdNext:
 	JMP loop1
