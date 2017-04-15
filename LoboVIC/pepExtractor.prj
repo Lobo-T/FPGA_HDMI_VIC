@@ -1,2 +1,1 @@
-work	"HDMIoutput.v"
-work	"vid_mem.vhd"
+work	"SPI_master.vhd"

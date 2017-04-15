@@ -21,19 +21,25 @@
 module LoboVIC(
 	input clk_50M,  // 50MHz
 	input btn1,btn2,btn3,
-	output clk12usb,
 	input [7:0] dilswitch,
 	output [7:0] led,
 	output [2:0] TMDSp, TMDSn,
 	output TMDSp_clock, TMDSn_clock,
 	input UART_RX,
-	output UART_TX
+	output UART_TX,
+
+	output clk12usb,
+	output usb_RES,
+	output spi_SSusb,
+	output spi_MOSI,
+	output spi_SCK,
+	input spi_MISO
    );
 	
 
 //////////Clocking	
 wire clk_TMDS, DCM_TMDS_CLKFX, pixclk, pixclkout, tmdsclk0;
-wire clk_50M_bufg;
+//wire clk_50M_bufg;
 
 //Generer 25 Mhz HDMI pikselklokke og 250Mhz HDMI bitklokke
 // 50Mhz / 2 = 25MHz
@@ -43,7 +49,7 @@ DCM_SP #(.CLKFX_MULTIPLY(5),.CLKDV_DIVIDE(2))
 	.CLK180(), .CLK270(), .CLK2X(), .CLK2X180(), .CLK90(), .CLKFX180(), .LOCKED(), .PSDONE(), .STATUS(), .DSSEN(), .PSCLK(), .PSINCDEC());
 
 BUFG BUFG_TMDSp(.I(DCM_TMDS_CLKFX), .O(clk_TMDS));
-BUFG BUFG_50M(.I(clk_50M), .O(clk_50M_bufg));
+//BUFG BUFG_50M(.I(clk_50M), .O(clk_50M_bufg));
 
 //Trengs for å drive TMDS klokken (pikselklokke) ut av kretsen
 ODDR2 #(
@@ -188,8 +194,49 @@ uart uart1 (
     .tx(UART_TX), 
     .r_data(uart_rx_data)
     );
-	 
 
+/////////////////////////////////////////////////////////////////////////
+//SPI
+wire spi_Start_transfer;
+wire spi_Busy;
+wire spi_New_data;
+reg [7:0] spi_Data_in;
+wire [7:0] spi_Data_out;
+reg spi_SSusb_reg=1'b0;
+
+assign spi_SSusb = ~spi_SSusb_reg;
+assign usb_RES = pllLocked;
+
+spi SPI_master1 (
+    .clk(clk_50M), 
+    .rst(~pllLocked), 
+    .miso(spi_MISO), 
+    .mosi(spi_MOSI), 
+    .sck(spi_SCK), 
+    .start(spi_Start_transfer), 
+    .data_in(spi_Data_in), 
+    .data_out(spi_Data_out), 
+    .busy(spi_Busy), 
+    .new_data(spi_New_data)
+    );
+
+/////////////////////////////////////////////////////////////////////////
+//Coprocessor
+///////////
+reg [31:0] mulResult;
+reg [7:0] mulFacAlo,mulFacAhi,mulFacBlo,mulFacBhi;
+always @(posedge clkCPU)
+	mulResult = {mulFacAhi,mulFacAlo} * {mulFacBhi,mulFacBlo};
+	
+
+
+//wire timer_int10ms;
+//intTimer timer10ms (
+//	.clk(clk_50M),
+//	.count(18'd5000000),
+//	.interrupt(timer_int10ms)
+//	);
+//assign cpuNMI=timer_int10ms;
 /////////////////////////////////////////////////////////////////////////
 // CPU IO
 ////////////////////////////////////////////////////////////////////////
@@ -210,6 +257,10 @@ always @(posedge clkCPU)
 	begin
 		if((cpuabus == 65003) && cpuWrite)
 			uart_tx_data <= cpudbusO;
+		else if(cpuabus == 65007 && cpuWrite)
+			spi_SSusb_reg <= cpudbusO[1];
+		else if(cpuabus == 65006 && cpuWrite)
+			spi_Data_in <= cpudbusO;
 	end
 
 //Skriving til 65005 skriver til UART kontrollregisteret.
@@ -217,8 +268,30 @@ always @(posedge clkCPU)
 //D1: Data i RX lest (hent neste fra FIFO)
 assign rd_uart = (cpuabus == 65005 && cpuWrite) ? cpudbusO[1] : 1'b0;
 assign wr_uart = (cpuabus == 65005 && cpuWrite) ? cpudbusO[0] : 1'b0;
+
+assign spi_Start_transfer = (cpuabus == 65007 && cpuWrite) ? cpudbusO[0] : 1'b0;
 	
-	
+//HW multiplikator faktor A = 65010,65011, B = 65012,65013
+always @(posedge clkCPU)
+	begin
+		if((cpuabus == 65010) && cpuWrite)
+			mulFacAlo <= cpudbusO;
+	end	
+always @(posedge clkCPU)
+	begin
+		if((cpuabus == 65011) && cpuWrite)
+			mulFacAhi <= cpudbusO;
+	end	
+always @(posedge clkCPU)
+	begin
+		if((cpuabus == 65012) && cpuWrite)
+			mulFacBlo <= cpudbusO;
+	end	
+always @(posedge clkCPU)
+	begin
+		if((cpuabus == 65013) && cpuWrite)
+			mulFacBhi <= cpudbusO;
+	end	
 	
 //Data input bussen til CPUen må forsinkes en syklus når den ikke leser fra synkron BRAM.
 always @(posedge clkCPU)
@@ -230,13 +303,20 @@ always @(posedge clkCPU)
 //Lesing fra adresse 65001 vil lese dilswitchene
 //Lesing fra adresse 65002 vil lese data i UART RX buffer
 //Lesing fra adresse 65004 vil lese UART status D0: TX full, D1: RX tom
+//65014-65017 HW multiplikator resultat
 assign cpudbusI = ((cpuabus_reg == 65001) && ~cpuWrite_reg) ? dilswitch :
+
 						(cpuabus_reg == 65002 && ~cpuWrite_reg)? uart_rx_data :
 						(cpuabus_reg == 65004 && ~cpuWrite_reg)? {6'b000000,rx_empty,tx_full} :
+						
+						(cpuabus_reg == 65009 && ~cpuWrite_reg)? {6'b000000,spi_New_data,spi_Busy} :
+						(cpuabus_reg == 65008 && ~cpuWrite_reg)? spi_Data_out :
+						
+						(cpuabus_reg == 65014 && ~cpuWrite_reg)? mulResult[7:0] :
+						(cpuabus_reg == 65015 && ~cpuWrite_reg)? mulResult[15:8] :
+						(cpuabus_reg == 65016 && ~cpuWrite_reg)? mulResult[23:16] :
+						(cpuabus_reg == 65017 && ~cpuWrite_reg)? mulResult[31:24] :
 						memcpudbusI;
-
-
-
 
 /////////////////////////////////////////////////////////////////////////
 // VIDEO OUTPUT
@@ -261,4 +341,26 @@ OBUFDS OBUFDS_blue (.I(TMDS[0]), .O(TMDSp[0]), .OB(TMDSn[0]));
 OBUFDS OBUFDS_clock(.I(pixclkout), .O(TMDSp_clock), .OB(TMDSn_clock));
 
 
+endmodule
+//////////////////////////////////////////////////////////////////////////
+//Timer
+module intTimer(
+input clk,
+input [18:0] count,
+output reg interrupt
+);
+	reg [18:0] counter=0;
+	always @(posedge clk)
+		begin
+			if(counter >= count)
+				begin
+					interrupt <= 1'b1;
+					counter <= 18'd0;
+				end
+			else
+				begin
+					interrupt <= 1'b0;
+					counter <= counter + 1'b1;
+				end
+		end
 endmodule

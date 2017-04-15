@@ -1,4 +1,0 @@
-vhdtdtfi -prj LoboVIC -o C:/Users/Trond/LoboVIC/vid_mem.tfi -lib work C:/Users/Trond/LoboVIC//vid_mem.vhd -module vid_mem -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
-vhdtdtfi -prj LoboVIC -o C:/Users/Trond/LoboVIC/vid_mem.tfi -lib work C:/Users/Trond/LoboVIC//vid_mem.vhd -module vid_mem -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
-vhdtdtfi -lib work HDMIoutput.v -lib work vid_mem.vhd -prj LoboVIC -o vid_mem.spl -module vid_mem -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan6 vid_mem.spl C:/Users/Trond/LoboVIC/vid_mem.sym 

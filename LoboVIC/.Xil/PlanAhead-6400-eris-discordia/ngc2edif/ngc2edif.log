@@ -1,0 +1,27 @@
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus Mmux_vmemabus_mod_rs_lut<15 : 8> on
+   block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_lut<15 : 0> on
+   block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 81576 kilobytes
+
