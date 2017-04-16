@@ -20,6 +20,10 @@
 	.dsb $46
 CursorPos:
 	.byt 0,2	;512
+DrawPos: 
+	.byt 0,2
+CurrChar:
+	.byt 0
 
 
 	;*= $2000
@@ -750,10 +754,40 @@ loop1
 	STA 65000
 	;Kopier bildelinje 50 til 100
 	;LDA $1f40,X
-	LDA #%11000000
-	STA $3e80,X
-	INX
+	;LDA #%11000000
+	;STA $3e80,X
+	;INX
 
+	;Sjekk om F2 er inne og skift grafikkmodus
+	LDA #59
+	CMP KbdKeyArray+2
+	BNE F2NOT
+	LDA #bmGFX_MODE_BM160
+	JMP F2END
+F2NOT:
+	LDA #bmGFX_MODE_TEXT
+F2END:
+	STA bGFX_MODE
+	
+	;Sjekk om F1 er inne
+	LDA #58				;USB keycode for F1
+	CMP KbdKeyArray+2	;Første tast
+	BNE GetInputAndDraw
+Demo1:
+	LDA CurrChar
+	LDY #0
+	STA (DrawPos),y
+	INC DrawPos
+	BNE Demo1Next
+	INC DrawPos+1
+	LDA DrawPos+1
+	CMP #19
+	BNE Demo1Next
+	LDA #2
+	STA DrawPos+1
+	INC CurrChar
+	
+GetInputAndDraw:
 	JSR kbdrd
 	BCS KbdNext
 	JSR sendUARTchar
@@ -766,6 +800,7 @@ IncCursorPos:
 IncCursorPosNext:
 
 KbdNext:
+Demo1Next:
 	JMP loop1
 
 ;--------------------------------------------------------------------------
@@ -1059,12 +1094,15 @@ KbdTranslate:
 	AND #%00100010		;Høyre og venstre shift fra USB keyboard.  Må fikses hvis bit 5 i KbdLocks brukes til noe.
 	BNE KbdShift
 	LDA	KbdLookupTable,x
+	CLC
 	RTS
 KbdShift:
 	LDA KbdLookupTableShifted,x
+	CLC
 	RTS
 KbdNotPrintable:
 	JSR prtHexChr
+	SEC
 	RTS
 	;---
 

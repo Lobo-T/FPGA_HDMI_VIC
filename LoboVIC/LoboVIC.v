@@ -244,6 +244,7 @@ reg [7:0] ledstat = 0;
 assign led = ledstat;
 reg [15:0] cpuabus_reg;
 reg cpuWrite_reg;
+reg [1:0] gfxMode = 2'b0;
 
 //Når vi skriver til adresse 65000 skriver vi i virkeligheten til lysdiodene	
 always @(posedge clkCPU)
@@ -291,6 +292,13 @@ always @(posedge clkCPU)
 	begin
 		if((cpuabus == 65013) && cpuWrite)
 			mulFacBhi <= cpudbusO;
+	end
+//gfxMode bit 1 lavt: Textmodus
+//gfxMode bit 1 høyt: Grafikkmodus	
+always @(posedge clkCPU)
+	begin
+		if((cpuabus == 65018) && cpuWrite)
+			gfxMode <= cpudbusO[1:0];
 	end	
 	
 //Data input bussen til CPUen må forsinkes en syklus når den ikke leser fra synkron BRAM.
@@ -324,7 +332,8 @@ wire [2:0] TMDS;
 
 HDMIoutput HDMIout (
     .clk_TMDS(clk_TMDS), 
-    .pixclk(pixclk), 
+    .pixclk(pixclk),
+	 .gfxMode(gfxMode),
     .vmemdbus(vmemdbus), 
     .vmemabus(vmemabus), 
     .TMDS(TMDS),

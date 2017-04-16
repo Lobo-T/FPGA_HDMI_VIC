@@ -21,8 +21,9 @@
 module HDMIoutput(
 	input clk_TMDS,
 	input pixclk,
+	input [1:0] gfxMode,
 	input [7:0] vmemdbus,
-	output reg [15:0] vmemabus=0,
+	output [15:0] vmemabus,
 	output [2:0] TMDS,
 	
 	input [7:0] chrdbus,
@@ -37,6 +38,12 @@ module HDMIoutput(
 
 
 ////////////////////////////////////////////////////////////////////////
+reg [15:0] vmemabus_Txt1;
+reg [15:0] vmemabus_Gfx1;
+wire [7:0] vdataout;
+wire [7:0] vdataout_Txt1;
+wire [7:0] vdataout_Gfx1;
+
 //reg [9:0] CounterX=798, CounterY=523;
 reg [9:0] CounterX=798, CounterY=524;
 reg hSync, vSync, DrawArea;
@@ -48,34 +55,39 @@ always @(posedge pixclk) if(CounterX==799) CounterY <= (CounterY==524) ? 1'b0 : 
 always @(posedge pixclk) hSync <= (CounterX>=656) && (CounterX<752);
 always @(posedge pixclk) vSync <= (CounterY>=490) && (CounterY<492);
 
+//gfxMode bit 1 lavt: Textmodus
+//gfxMode bit 1 høyt: Grafikkmodus
+assign vmemabus = (gfxMode[1])?vmemabus_Gfx1 : vmemabus_Txt1;
+assign vdataout = (gfxMode[1])?vdataout_Gfx1 : vdataout_Txt1;
+
 ///////////////////////
 //160x120 bitmap modus
 //
 // 4-dobling X og Y
-//reg [1:0] Xmod4=0;
-//reg [1:0] Ymod4=1;
-//
-//always @(posedge pixclk)
-//begin
-//	Xmod4 <= (Xmod4==2'd3) ? 2'd0 : Xmod4+2'd1;
-//end
-//always @(posedge pixclk)
-//begin
-//	if(CounterX == 640 && CounterY<480)
-//		Ymod4 <= (Ymod4==2'd3) ? 2'd0 : Ymod4+2'd1;
-//end		
-//
-//always @(posedge pixclk)
-//begin	
-//	if(CounterX == 799 && CounterY == 524)
-//		vmemabus <= 0;
-//	else if(CounterX==639 && Ymod4!=0 && vmemabus >= 159)
-//			vmemabus <= vmemabus-15'd160;
-//	else if(Xmod4==0 && DrawArea)
-//		vmemabus <= vmemabus + 1'b1;
-//	else
-//		vmemabus <= vmemabus;
-//end
+reg [1:0] Xmod4=0;
+reg [1:0] Ymod4=1;
+
+always @(posedge pixclk)
+begin
+	Xmod4 <= (Xmod4==2'd3) ? 2'd0 : Xmod4+2'd1;
+end
+always @(posedge pixclk)
+begin
+	if(CounterX == 640 && CounterY<480)
+		Ymod4 <= (Ymod4==2'd3) ? 2'd0 : Ymod4+2'd1;
+end		
+
+always @(posedge pixclk)
+begin	
+	if(CounterX == 799 && CounterY == 524)
+		vmemabus_Gfx1 <= 0;
+	else if(CounterX==639 && Ymod4!=0 && vmemabus_Gfx1 >= 159)
+			vmemabus_Gfx1 <= vmemabus_Gfx1-15'd160;
+	else if(Xmod4==0 && DrawArea)
+		vmemabus_Gfx1 <= vmemabus_Gfx1 + 1'b1;
+	else
+		vmemabus_Gfx1 <= vmemabus_Gfx1;
+end
 
 ///////
 // 640x480 character mode 8x8 chars
@@ -95,20 +107,20 @@ end
 always @(posedge pixclk)
 begin	
 	if(CounterX == 799 && CounterY == 524)
-		vmemabus <= 0;
-	else if(CounterX==639 && Ymod8!=0 && vmemabus >= 79)
-			vmemabus <= vmemabus-80;
+		vmemabus_Txt1 <= 0;
+	else if(CounterX==639 && Ymod8!=0 && vmemabus_Txt1 >= 79)
+			vmemabus_Txt1 <= vmemabus_Txt1-80;
 	else if(Xmod8==0 && DrawArea)
-		vmemabus <= vmemabus + 1'b1;
+		vmemabus_Txt1 <= vmemabus_Txt1 + 1'b1;
 	else
-		vmemabus <= vmemabus;
+		vmemabus_Txt1 <= vmemabus_Txt1;
 end
 
 always @(posedge pixclk)
 	$display("X:%d Y:%d : ab:%d:db:%d :  Xm:%d:Ym:%d: Pixout: %b: RGB: %b:%b:%b", CounterX,CounterY,vmemabus,vmemdbus,Xmod8,Ymod8,pixout,red,green,blue);
 	
 
-assign colabus = vmemabus;
+assign colabus = vmemabus_Txt1;
 
 //wire [7:0] testvmemd = 82;
 //assign chrabus = (testvmemd*8)+(CounterY % 8);
@@ -117,10 +129,13 @@ wire [7:0] rowshift = chrdbus << (CounterX%8);
 wire [7:0] pixout = (rowshift & 8'b10000000)?
 					 coldbus :
 					 8'b0;
-					 
+
 ////////////////////////////////////////////////////////////////////////
+assign vdataout_Txt1 = pixout;
+assign vdataout_Gfx1 = vmemdbus;
 wire [7:0] red, green, blue;
-RGB332_converter conv1(.RGB332(pixout), .RED(red), .GREEN(green), .BLUE(blue));
+RGB332_converter conv1(.RGB332(vdataout), .RED(red), .GREEN(green), .BLUE(blue));
+//RGB332_converter conv1(.RGB332(pixout), .RED(red), .GREEN(green), .BLUE(blue));
 //RGB332_converter conv1(.RGB332(vmemdbus), .RED(red), .GREEN(green), .BLUE(blue));
 
 ////////////////////////////////////////////////////////////////////////
