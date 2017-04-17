@@ -121,9 +121,9 @@ wire [7:0] chrdbusV;			//Character ROM databuss for video output
 wire [10:0] colabusV;		//Farge RAM for video out
 wire [7:0] coldbusV;
 
-assign vmemabus_mod = (btn1)?(vmemabus + 16'd19200):
-							(btn2)?(vmemabus + 16'd38400):
-							 vmemabus;
+assign vmemabus_mod = (btn1)?(vmemabus):
+							(btn2)?(vmemabus + 16'h4B00):	//Start vidmemLo
+							 vmemabus+16'hB100;				//Start vidmemHi
 
 video_mem vmem1 (
   .clka(clkCPU), // input clka
@@ -237,6 +237,14 @@ always @(posedge clkCPU)
 //	.interrupt(timer_int10ms)
 //	);
 //assign cpuNMI=timer_int10ms;
+
+wire [7:0] randout;
+lfsr rand1 (
+    .clk(clkCPU), 
+    .reset(~pllLocked), 
+    .en(1'b1), 
+    .q(randout)
+    );
 /////////////////////////////////////////////////////////////////////////
 // CPU IO
 ////////////////////////////////////////////////////////////////////////
@@ -312,6 +320,7 @@ always @(posedge clkCPU)
 //Lesing fra adresse 65002 vil lese data i UART RX buffer
 //Lesing fra adresse 65004 vil lese UART status D0: TX full, D1: RX tom
 //65014-65017 HW multiplikator resultat
+//65018 Pseudo random generator
 assign cpudbusI = ((cpuabus_reg == 65001) && ~cpuWrite_reg) ? dilswitch :
 
 						(cpuabus_reg == 65002 && ~cpuWrite_reg)? uart_rx_data :
@@ -324,6 +333,8 @@ assign cpudbusI = ((cpuabus_reg == 65001) && ~cpuWrite_reg) ? dilswitch :
 						(cpuabus_reg == 65015 && ~cpuWrite_reg)? mulResult[15:8] :
 						(cpuabus_reg == 65016 && ~cpuWrite_reg)? mulResult[23:16] :
 						(cpuabus_reg == 65017 && ~cpuWrite_reg)? mulResult[31:24] :
+						
+						(cpuabus_reg == 65019 && ~cpuWrite_reg)? randout :
 						memcpudbusI;
 
 /////////////////////////////////////////////////////////////////////////
@@ -372,4 +383,14 @@ output reg interrupt
 					counter <= counter + 1'b1;
 				end
 		end
+endmodule
+/////////////////////////////////////////////////////////////////////////
+//Pseudorandom generator
+module lfsr(input clk, reset, en, output reg [7:0] q);
+  always @(posedge clk or posedge reset) begin
+    if (reset)
+      q <= 8'd1; // can be anything except zero
+    else if (en)
+      q <= {q[6:0], q[7] ^ q[5] ^ q[4] ^ q[3]}; // polynomial for maximal LFSR
+  end
 endmodule

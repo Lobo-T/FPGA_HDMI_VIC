@@ -19,15 +19,15 @@
 	usbKbdOK = $45
 	.dsb $46
 CursorPos:
-	.byt 0,2	;512
+	.byt 0,$b1	
 DrawPos: 
-	.byt 0,2
+	.byt 0,$b1
 CurrChar:
 	.byt 0
 
 
 	;*= $2000
-	.dsb $8000-*
+	.dsb $0200-*
 
 
 	LDX #$FF  ;Kjent verdi for toppen av stacken
@@ -774,16 +774,17 @@ F2END:
 	CMP KbdKeyArray+2	;Første tast
 	BNE GetInputAndDraw
 Demo1:
-	LDA CurrChar
+;	LDA CurrChar
+	LDA bRandom
 	LDY #0
 	STA (DrawPos),y
 	INC DrawPos
 	BNE Demo1Next
 	INC DrawPos+1
 	LDA DrawPos+1
-	CMP #19
+	CMP #$c4
 	BNE Demo1Next
-	LDA #2
+	LDA #$B1
 	STA DrawPos+1
 	INC CurrChar
 	
@@ -1130,8 +1131,9 @@ KbdKeypadLookupTable:
 	NOP
 	NOP
 ;-----------------------------------------------------------------------------------------------------
-	.dsb $f000-*
+;	.dsb $f000-*
 ;Interrupthandler
+Interrupthandler:
 	;Save Acc,X,Y
 	SEI
 	PHA
@@ -1169,8 +1171,8 @@ uartRXhandler
 ;Vektorer
 	.dsb $fffa-*,$ff
 	;NMI	$FFFA/$FFFB
-	.byt $00,$80
+	.byt <Interrupthandler,>Interrupthandler
 	;RESET	$FFFC/$FFFD	
-	.byt $00,$80
+	.byt $00,$02
 	;IRQ	$FFFE/$FFFF
-	.byt $00,$f0
+	.byt <Interrupthandler,>Interrupthandler

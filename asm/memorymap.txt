@@ -1,0 +1,11 @@
+Memory map:
+0000	Zero page	256
+0100	Stack		256
+0200	RAM			18688		\
+4B00	VidmemLo	19200		/	Tilsammen 37888
+9600	Charmmem	2048
+9E00	Colourmem	4800
+B0C0	RAM			64
+B100	VidmemHi	19200
+FC00	RAM			488		
+FDE8	IO
