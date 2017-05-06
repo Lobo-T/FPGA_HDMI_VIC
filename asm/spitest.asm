@@ -5,11 +5,10 @@
 #include io.asm
 #include max3421.asm
 
-	*=0000
-
 ;Zeropage pointer adresse for funksjonskall
 	loAdr = $00
 	hiAdr = $01
+
 ;Disse brukes kun under USB konfigurasjon og kan gjenbrukes senere
 	counter1 = $02
 	usbBuffer = $03		; 64 bytes
@@ -17,26 +16,13 @@
 	usbThisDescriptor = $43
 	usbNextDescriptor = $44
 	usbKbdOK = $45
-	.dsb $46
-CursorPos:
-	.byt 0,$b1	
-DrawPos: 
-	.byt 0,$b1
-CurrChar:
-	.byt 0
-Jiffyclock:
-	.byt 0,0,0,0
 
 
+	*=0000
 	;*= $2000
-	.dsb $0200-*
-	
-	LDA #0
-	STA Jiffyclock
-	STA Jiffyclock+1
-	STA Jiffyclock+2
-	STA Jiffyclock+3
-	
+	.dsb $8000-*,$45
+
+
 	LDX #$FF  ;Kjent verdi for toppen av stacken
 	TXS
 	;-----
@@ -51,7 +37,7 @@ tekstslutt:
 serloop
 	LDA #1
 	AND 65004	;Sjekk om UART FIFO er full
-	BNE serloop	;Vent på UART
+	BNE serloop	;Vent p? UART
 	LDA tekststart,x
 	STA 65003
 	LDA #1
@@ -60,8 +46,6 @@ serloop
 	CPX #tekstslutt-tekststart
 	BNE serloop
 
-	;debug
-	;JMP SDcardReset
 ;--------------------
 ;USB setup
 
@@ -82,7 +66,7 @@ serloop
 	LDX #rUSBCTL
 	LDY #00
 	JSR wrUSBreg
-	
+		
 	;Get OSCOK
 	;Vent til MAX3421s PLL har låst
 WAIT_OSC_LOOP:
@@ -732,118 +716,16 @@ XFRrslt:
 	BNE USB_WAITFRAME_LOOP
 	;200 frames
 	.)
-;--------------------------------------------
-SDcardReset:
-	LDY #$ff
-	LDX #100
-.(
-spiTXwait:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait
-	STY bSPI_TX
-	LDA #$00|bmSPI_CTRL_wr_spi
-	STA bSPI_CTRL
-	DEX
-	BNE spiTXwait
-	.)
-	println(TESTSDC)
-	;GO_IDLE_STATE
-	LDA #%01000000
-	JSR sendSPISDCbyte
-	LDA #%00000000
-	JSR sendSPISDCbyte
-	LDA #%00000000
-	JSR sendSPISDCbyte
-	LDA #%00000000
-	JSR sendSPISDCbyte
-	LDA #%00000000
-	JSR sendSPISDCbyte
-	LDA #%10010101
-	JSR sendSPISDCbyte
-	LDA #00
-	JSR sendSPISDCbyte
-	
-	;Status
-.(
-	LDY #30
-spiTXwait:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait
-	LDA #$ff
-	STA bSPI_TX
-	LDA #bmSPI_CTRL_SSsdcard|bmSPI_CTRL_wr_spi
-	STA bSPI_CTRL
-spiTXwait2:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait2	
-	LDX bSPI_RX
-	JSR prtHexChr
-	DEY
-	BNE spiTXwait
-	.)
-	
-	JSR prtCRLN
-	
-CMD8:
-	.(
-spiTXwait:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait
-	.)
-	println(TESTSDC)
-	;GO_IDLE_STATE
-	LDA #%01001000
-	JSR sendSPISDCbyte
-	LDA #%00000000
-	JSR sendSPISDCbyte
-	LDA #%00000000
-	JSR sendSPISDCbyte
-	LDA #%00000001
-	JSR sendSPISDCbyte
-	LDA #%10101010
-	JSR sendSPISDCbyte
-	LDA #%10000111
-	JSR sendSPISDCbyte
 
-	.(
-	LDY #30
-spiTXwait:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait
-	LDA #$ff
-	STA bSPI_TX
-	LDA #bmSPI_CTRL_SSsdcard|bmSPI_CTRL_wr_spi
-	STA bSPI_CTRL
-spiTXwait2:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait2	
-	LDX bSPI_RX
-	JSR prtHexChr
-	DEY
-	BNE spiTXwait
-	.)
-	
-	;-----
-	println(TESTSDCEND)
-;-----------------------------------------------------------------------------------------------
 	;Test print string
 	JSR prtCRLN
 	println(TESTSTRNG1)
-	
+
 	JMP MAIN
 
 
 
 TESTSTRNG1: .byt "Boot complete",0
-TESTSDC: .byt "SD card test",0
-TESTSDCEND: .byt "SD card test END",0
-
 ;Addresse og endpoint for tilkoplet USB tastatur
 UsbKbdAdr: .byt 0
 UsbKbdEPAdr: .byt 0
@@ -854,88 +736,25 @@ KbdKeyArray: .byt 0,0,0,0,0,0,0,0
 ;---------------------------------------------------------------------------------
 ;--------------------MAIN---------------------------------------------------------
 ;---------------------------------------------------------------------------------
-
 MAIN:
 	CLI	;Enable interrupts
 
-	LDA #0
-	STA DrawPos
-	LDA #$b1
-	STA DrawPos+1
-	;----
-	LDA #176
-	LDY #0
-	STA (DrawPos),y
-	
-	;HW screenpos kalkulator
-	LDX #40
-	STX bScreenX
-	LDX #30
-	STX bScreenY
-	LDX bScreenAdrLo
-	STX DrawPos
-	LDX bScreenAdrHi
-	STX DrawPos+1
-	STA (DrawPos),Y
-	
-	;----
-	
 	LDX #$0
-	
 loop1
 	;Kopier DILbrytere til LEDs
 	LDA 65001
 	STA 65000
 	;Kopier bildelinje 50 til 100
 	;LDA $1f40,X
-	;LDA #%11000000
-	;STA $3e80,X
-	;INX
+	LDA #%11000000
+	STA $3e80,X
+	INX
 
-	;Sjekk om F2 er inne og skift grafikkmodus
-	LDA #59
-	CMP KbdKeyArray+2
-	BNE F2NOT
-	LDA #bmGFX_MODE_BM160
-	JMP F2END
-F2NOT:
-	LDA #bmGFX_MODE_TEXT
-F2END:
-	STA bGFX_MODE
-	
-	;Sjekk om F1 er inne
-	LDA #58				;USB keycode for F1
-	CMP KbdKeyArray+2	;Første tast
-	BNE GetInputAndDraw
-Demo1:
-;	LDA CurrChar
-	LDA bRandom
-	LDY #0
-	STA (DrawPos),y
-	INC DrawPos
-	BNE Demo1Next
-	INC DrawPos+1
-	LDA DrawPos+1
-	CMP #$c4
-	BNE Demo1Next
-	LDA #$B1
-	STA DrawPos+1
-	INC CurrChar
-	
-GetInputAndDraw:
 	JSR kbdrd
 	BCS KbdNext
 	JSR sendUARTchar
-	LDY #0
-	STA (CursorPos),y
-IncCursorPos:
-	INC CursorPos
-	BNE IncCursorPosNext
-	INC	CursorPos+1
-IncCursorPosNext:
 
 KbdNext:
-Demo1Next:
 	JMP loop1
 
 ;--------------------------------------------------------------------------
@@ -1045,7 +864,6 @@ rdUSBreg:
 
 	;Sender en byte til MAX3421
 sendSPIUSBbyte:
-.(
 	PHA
 spiTXwait:
 	LDA #bmSPI_STATUS_busy
@@ -1057,32 +875,7 @@ spiTXwait:
 	STA bSPI_CTRL
 	LDA #bmSPI_CTRL_SSusb|bmSPI_CTRL_wr_spi
 	STA bSPI_CTRL
-spiTXwait2:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait2
 	RTS
-	.)
-
-sendSPISDCbyte:
-.(
-	PHA
-spiTXwait:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait
-	PLA
-	STA bSPI_TX
-	LDA #bmSPI_CTRL_SSsdcard
-	STA bSPI_CTRL
-	LDA #bmSPI_CTRL_SSsdcard|bmSPI_CTRL_wr_spi
-	STA bSPI_CTRL
-spiTXwait2:
-	LDA #bmSPI_STATUS_busy
-	AND bSPI_STATUS
-	BNE spiTXwait2
-	RTS
-	.)
 ;------------
 
 ;Hent nytt tegn fra tastaturet.
@@ -1255,15 +1048,12 @@ KbdTranslate:
 	AND #%00100010		;Høyre og venstre shift fra USB keyboard.  Må fikses hvis bit 5 i KbdLocks brukes til noe.
 	BNE KbdShift
 	LDA	KbdLookupTable,x
-	CLC
 	RTS
 KbdShift:
 	LDA KbdLookupTableShifted,x
-	CLC
 	RTS
 KbdNotPrintable:
 	JSR prtHexChr
-	SEC
 	RTS
 	;---
 
@@ -1291,9 +1081,8 @@ KbdKeypadLookupTable:
 	NOP
 	NOP
 ;-----------------------------------------------------------------------------------------------------
-;	.dsb $f000-*
+	.dsb $f000-*
 ;Interrupthandler
-Interrupthandler:
 	;Save Acc,X,Y
 	SEI
 	PHA
@@ -1327,23 +1116,12 @@ uartRXhandler
 	LDA #%00000011  ;D1:RX read D0:TX start
 	STA 65005
 	RTS
-	
-NMIHandler:
-	INC Jiffyclock
-	BNE	NMIEnd
-	INC Jiffyclock+1
-	BNE NMIEnd
-	INC Jiffyclock+2
-	BNE NMIEnd
-	INC Jiffyclock+3
-NMIEnd:
-	RTI
 ;----------------------------------------------------------------------------------------
 ;Vektorer
 	.dsb $fffa-*,$ff
 	;NMI	$FFFA/$FFFB
-	.byt <NMIHandler,>NMIHandler
+	.byt $00,$80
 	;RESET	$FFFC/$FFFD	
-	.byt $00,$02
+	.byt $00,$80
 	;IRQ	$FFFE/$FFFF
-	.byt <Interrupthandler,>Interrupthandler
+	.byt $00,$f0
