@@ -57,8 +57,8 @@ always @(posedge pixclk) vSync <= (CounterY>=490) && (CounterY<492);
 
 //gfxMode bit 1 lavt: Textmodus
 //gfxMode bit 1 høyt: Grafikkmodus
-assign vmemabus = (gfxMode[1])?vmemabus_Gfx1 : vmemabus_Txt1;
-assign vdataout = (gfxMode[1])?vdataout_Gfx1 : vdataout_Txt1;
+assign vmemabus = (gfxMode[1]) ? vmemabus_Gfx1 : vmemabus_Txt1;
+assign vdataout = (gfxMode[1]) ? vdataout_Gfx1 : vdataout_Txt1;
 
 ///////////////////////
 //160x120 bitmap modus
@@ -89,7 +89,7 @@ begin
 		vmemabus_Gfx1 <= vmemabus_Gfx1;
 end
 
-///////
+///////////////////////////////////
 // 640x480 character mode 8x8 chars
 reg [2:0] Xmod8=0;
 reg [2:0] Ymod8=1;
@@ -109,15 +109,15 @@ begin
 	if(CounterX == 799 && CounterY == 524)
 		vmemabus_Txt1 <= 0;
 	else if(CounterX==639 && Ymod8!=0 && vmemabus_Txt1 >= 79)
-			vmemabus_Txt1 <= vmemabus_Txt1-80;
+			vmemabus_Txt1 <= vmemabus_Txt1 - 16'd80;
 	else if(Xmod8==0 && DrawArea)
 		vmemabus_Txt1 <= vmemabus_Txt1 + 1'b1;
 	else
 		vmemabus_Txt1 <= vmemabus_Txt1;
 end
 
-always @(posedge pixclk)
-	$display("X:%d Y:%d : ab:%d:db:%d :  Xm:%d:Ym:%d: Pixout: %b: RGB: %b:%b:%b", CounterX,CounterY,vmemabus,vmemdbus,Xmod8,Ymod8,pixout,red,green,blue);
+//always @(posedge pixclk)
+//	$display("X:%d Y:%d : ab:%d:db:%d :  Xm:%d:Ym:%d: Pixout: %b: RGB: %b:%b:%b", CounterX,CounterY,vmemabus,vmemdbus,Xmod8,Ymod8,pixout,red,green,blue);
 	
 
 assign colabus = vmemabus_Txt1;

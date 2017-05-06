@@ -1,0 +1,29 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test_isim_beh.exe -prj C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test_beh.prj work.LoboVIC_test work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/clk12.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/uart_tx.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/uart_rx.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/mod_m_counter.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/fifo.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/uart.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/HDMIoutput.v" into library work
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" into library work
+WARNING:HDLCompiler:751 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" Line 240: Redeclaration of ansi port BE is not allowed
+Analyzing Verilog file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:267 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 45: Cannot find port led on this module
+ERROR:HDLCompiler:25 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 49: Module <LoboVIC> does not have a port named <btn3>.
+ERROR:HDLCompiler:25 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 50: Module <LoboVIC> does not have a port named <clk12usb>.
+ERROR:HDLCompiler:25 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 51: Module <LoboVIC> does not have a port named <dilswitch>.
+ERROR:HDLCompiler:25 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 52: Module <LoboVIC> does not have a port named <led>.
+WARNING:HDLCompiler:1016 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 45: Port LED is not connected to this instance
+WARNING:HDLCompiler:189 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" Line 214: Size mismatch in connection of port <dpra>. Formal port size is 13-bit while actual signal size is 11-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" Line 343: Size mismatch in connection of port <colabus>. Formal port size is 13-bit while actual signal size is 11-bit.
+ERROR:Simulator:778 - Static elaboration of top level Verilog design unit(s) in library work failed

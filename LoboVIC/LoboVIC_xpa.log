@@ -1,4 +1,4 @@
-Creating log file C:\Users\Trond\FPGA\LoboVIC\LoboVIC_xpa.log.
+Creating log file C:\Users\Trond\FPGA\LoboVIC-extern CPU\LoboVIC_xpa.log.
 Loading device for application Rf_Device from file '6slx9.nph' in environment
 C:\Xilinx\14.7\ISE_DS\ISE\.
    "LoboVIC" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
@@ -10,7 +10,7 @@ INFO:Power:1693 -
    --------------------------------------------------------------
 
 Design load 20% completeDesign load 25% completeDesign load 30% completeDesign load 60% completeDesign load 95% completeDesign load 100% completeRunning Vector-less Activity Propagation
-............
+..........
 Finished Running Vector-less Activity Propagation
 Finished Running Vector-less Activity Propagation 0 secs 
 

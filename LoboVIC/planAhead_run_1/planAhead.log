@@ -1,0 +1,522 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Apr 28 13:37:53 2017
+# Process ID: 1640
+# Log file: C:/Users/Trond/FPGA/LoboVIC-extern CPU/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Trond/FPGA/LoboVIC-extern CPU/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {C:/Users/Trond/FPGA/LoboVIC-extern CPU/pa.fromNetlist.tcl}
+# create_project -name LoboVIC -dir "C:/Users/Trond/FPGA/LoboVIC-extern CPU/planAhead_run_1" -part xc6slx9tqg144-2
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/Trond/FPGA/LoboVIC-extern CPU} {ipcore_dir} }
+# add_files [list {ipcore_dir/charrom_CP865.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/colour_mem.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/video_mem.ncf}] -fileset [get_property constrset [current_run]]
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "LoboVIC.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf' to fileset 'constrs_1'
+# add_files [list {LoboVIC.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx9tqg144-2
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus vmemabus<14 : 0> on block LoboVIC is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Mmux_vmemabus[15]_vmemabus[15]_mux_2_OUT_rs_lut<15 : 8> on block LoboVIC is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Gfx1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Txt1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 80728 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/LoboVIC_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/LoboVIC_ngc_zx.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design colour_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to colour_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file colour_mem.edif ...
+ngc2edif: Total memory usage is 80984 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ngc' for (cell view 'colour_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/colour_mem_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/colour_mem_ngc_zx.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design video_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to video_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file video_mem.edif ...
+ngc2edif: Total memory usage is 80024 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ngc' for (cell view 'video_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/video_mem_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/video_mem_ngc_zx.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design charrom_CP865.ngc ...
+WARNING:NetListWriters:298 - No output is written to charrom_CP865.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file charrom_CP865.edif ...
+ngc2edif: Total memory usage is 79000 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ngc' for (cell view 'charrom_CP865', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/charrom_CP865_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/charrom_CP865_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 446 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 446 instances were transformed.
+  IOBUF => IOBUF (OBUFT, IBUF): 8 instances
+  RAM128X1D => RAM128X1D (RAMD64E, RAMD64E, RAMD64E, RAMD64E, MUXF7, MUXF7): 424 instances
+  RAM16X1D => RAM16X1D (RAMD32, RAMD32, GND): 4 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 2 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+
+Phase 0 | Netlist Checksum: 01db857e
+link_design: Time (s): elapsed = 00:00:13 . Memory (MB): peak = 628.621 ; gain = 203.355
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus vmemabus<14 : 0> on block LoboVIC is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Mmux_vmemabus[15]_vmemabus[15]_mux_2_OUT_rs_lut<15 : 8> on block LoboVIC is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Gfx1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Txt1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 81112 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/LoboVIC_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/LoboVIC_ngc_zx.edif]
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ngc' for (cell view 'colour_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/colour_mem_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/colour_mem_ngc_zx.edif]
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ngc' for (cell view 'video_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/video_mem_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/video_mem_ngc_zx.edif]
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ngc' for (cell view 'charrom_CP865', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/charrom_CP865_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/charrom_CP865_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 446 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+refresh_design: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 656.473 ; gain = 3.742
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus vmemabus<14 : 0> on block LoboVIC is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Mmux_vmemabus[15]_vmemabus[15]_mux_2_OUT_rs_lut<15 : 8> on block LoboVIC is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Gfx1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Txt1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 81048 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/LoboVIC_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/LoboVIC_ngc_zx.edif]
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ngc' for (cell view 'colour_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/colour_mem_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/colour_mem_ngc_zx.edif]
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ngc' for (cell view 'video_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/video_mem_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/video_mem_ngc_zx.edif]
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ngc' for (cell view 'charrom_CP865', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/charrom_CP865_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/LoboVIC.data/cache/charrom_CP865_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 446 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+refresh_design: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 669.012 ; gain = 4.273
+refresh_design
+WARNING: [Common 17-175] Failed to make directory to contain cached edif files [C:/Users/Trond/FPGA/LoboVIC-extern CPU/planAhead_run_1/LoboVIC.data/cache]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus vmemabus<14 : 0> on block LoboVIC is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Mmux_vmemabus[15]_vmemabus[15]_mux_2_OUT_rs_lut<15 : 8> on block LoboVIC is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Gfx1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Txt1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 81048 kilobytes
+
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/LoboVIC.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/LoboVIC.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design colour_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to colour_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file colour_mem.edif ...
+ngc2edif: Total memory usage is 80600 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ngc' for (cell view 'colour_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/colour_mem.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/colour_mem.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design video_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to video_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file video_mem.edif ...
+ngc2edif: Total memory usage is 80024 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ngc' for (cell view 'video_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/video_mem.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/video_mem.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design charrom_CP865.ngc ...
+WARNING:NetListWriters:298 - No output is written to charrom_CP865.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file charrom_CP865.edif ...
+ngc2edif: Total memory usage is 79000 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ngc' for (cell view 'charrom_CP865', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/charrom_CP865.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/charrom_CP865.edif]
+INFO: [Netlist 29-17] Analyzing 446 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+refresh_design: Time (s): elapsed = 00:00:09 . Memory (MB): peak = 696.879 ; gain = 15.652
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus vmemabus<14 : 0> on block LoboVIC is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Mmux_vmemabus[15]_vmemabus[15]_mux_2_OUT_rs_lut<15 : 8> on block LoboVIC is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Gfx1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Txt1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 81048 kilobytes
+
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/LoboVIC.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/LoboVIC.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design colour_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to colour_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file colour_mem.edif ...
+ngc2edif: Total memory usage is 80216 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ngc' for (cell view 'colour_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/colour_mem.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/colour_mem.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design video_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to video_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file video_mem.edif ...
+ngc2edif: Total memory usage is 80216 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ngc' for (cell view 'video_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/video_mem.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/video_mem.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design charrom_CP865.ngc ...
+WARNING:NetListWriters:298 - No output is written to charrom_CP865.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file charrom_CP865.edif ...
+ngc2edif: Total memory usage is 78808 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ngc' for (cell view 'charrom_CP865', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/charrom_CP865.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/charrom_CP865.edif]
+INFO: [Netlist 29-17] Analyzing 446 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+refresh_design: Time (s): elapsed = 00:00:09 . Memory (MB): peak = 698.453 ; gain = 0.000
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LoboVIC.ngc ...
+WARNING:NetListWriters:298 - No output is written to LoboVIC.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus vmemabus<14 : 0> on block LoboVIC is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Mmux_vmemabus[15]_vmemabus[15]_mux_2_OUT_rs_lut<15 : 8> on block LoboVIC is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Gfx1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/Maccum_vmemabus_Txt1_lut<15 : 0>
+   on block LoboVIC is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_G/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus HDMIout/encode_R/TMDS<9 : 0> on block
+   LoboVIC is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_G/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   HDMIout/encode_R/TMDS_code[9]_TMDS_data[9]_mux_36_OUT<9 : 0> on block LoboVIC
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LoboVIC.edif ...
+ngc2edif: Total memory usage is 81048 kilobytes
+
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/LoboVIC.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/LoboVIC.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design colour_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to colour_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file colour_mem.edif ...
+ngc2edif: Total memory usage is 81048 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ngc' for (cell view 'colour_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/colour_mem.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/colour_mem.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design video_mem.ngc ...
+WARNING:NetListWriters:298 - No output is written to video_mem.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file video_mem.edif ...
+ngc2edif: Total memory usage is 79576 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ngc' for (cell view 'video_mem', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/video_mem.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/video_mem.edif]
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design charrom_CP865.ngc ...
+WARNING:NetListWriters:298 - No output is written to charrom_CP865.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file charrom_CP865.edif ...
+ngc2edif: Total memory usage is 79000 kilobytes
+
+Reading core file 'C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ngc' for (cell view 'charrom_CP865', library 'LoboVIC_lib', file 'LoboVIC.ngc')
+Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/charrom_CP865.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1640-eris-discordia/ngc2edif/charrom_CP865.edif]
+INFO: [Netlist 29-17] Analyzing 446 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/charrom_CP865.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/colour_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/ipcore_dir/video_mem.ncf]
+Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+Finished Parsing UCF File [C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.ucf]
+refresh_design: Time (s): elapsed = 00:00:09 . Memory (MB): peak = 699.852 ; gain = 1.398
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/Trond/FPGA/LoboVIC-extern CPU\planAhead_pid1640.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Apr 28 17:02:50 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

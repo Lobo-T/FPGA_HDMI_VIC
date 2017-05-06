@@ -57,8 +57,8 @@
 //----------------------------------------------------------------------------
 // CLK_OUT1____12.000______0.000______50.0______360.161____213.839
 // CLK_OUT2_____5.000______0.000______50.0______426.583____213.839
-// CLK_OUT3____10.000______0.000______50.0______373.247____213.839
-// CLK_OUT4____13.953______0.000______50.0______349.616____213.839
+// CLK_OUT3_____5.000____180.000______50.0______426.583____213.839
+// CLK_OUT4____10.000______0.000______50.0______373.247____213.839
 //
 //----------------------------------------------------------------------------
 // "Input Clock   Freq (MHz)    Input Jitter (UI)"
@@ -74,8 +74,8 @@ module clk12
   // Clock out ports
   output        CLK_OUT12,
   output        CLK_OUT5,
+  output        CLK_OUT5_180,
   output        CLK_OUT10,
-  output        CLK_OUT14,
   // Status and control signals
   input         RESET,
   output        LOCKED
@@ -111,10 +111,10 @@ module clk12
     .CLKOUT1_DIVIDE         (120),
     .CLKOUT1_PHASE          (0.000),
     .CLKOUT1_DUTY_CYCLE     (0.500),
-    .CLKOUT2_DIVIDE         (60),
-    .CLKOUT2_PHASE          (0.000),
+    .CLKOUT2_DIVIDE         (120),
+    .CLKOUT2_PHASE          (180.000),
     .CLKOUT2_DUTY_CYCLE     (0.500),
-    .CLKOUT3_DIVIDE         (43),
+    .CLKOUT3_DIVIDE         (60),
     .CLKOUT3_PHASE          (0.000),
     .CLKOUT3_DUTY_CYCLE     (0.500),
     .CLKIN_PERIOD           (20.000),
@@ -152,11 +152,11 @@ module clk12
     .I   (clkout1));
 
   BUFG clkout3_buf
-   (.O   (CLK_OUT10),
+   (.O   (CLK_OUT5_180),
     .I   (clkout2));
 
   BUFG clkout4_buf
-   (.O   (CLK_OUT14),
+   (.O   (CLK_OUT10),
     .I   (clkout3));
 
 

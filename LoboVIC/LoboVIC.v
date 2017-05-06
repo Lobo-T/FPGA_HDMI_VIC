@@ -19,27 +19,52 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module LoboVIC(
-	input clk_50M,  // 50MHz
-	input btn1,btn2,btn3,
-	input [7:0] dilswitch,
-	output [7:0] led,
+	input clk_50M,
+	input btn1,btn2,
+	input S1,S2,S3,
+	output [7:0] LED,
+	
 	output [2:0] TMDSp, TMDSn,
 	output TMDSp_clock, TMDSn_clock,
+	
 	input UART_RX,
 	output UART_TX,
-
-	output clk12usb,
-	output usb_RES,
-	output spi_SSusb,
-	output spi_MOSI,
+	
+	output PHI2,
+	output PHI2_180,
+	output NMIB,
+	output IRQB,
+	output RESB,
+	output BE,
+	input [23:0] AB,
+	inout [7:0] DB,
+	inout RDY,
+	input VPA,
+	input VDA,
+	input R_WB,
+	
+	output USBRESB,
+	output USBSS,
+	output USBCLK,
 	output spi_SCK,
-	input spi_MISO
+	output spi_MOSI,
+	input spi_MISO,
+	input USBGPX,
+	input USBINT,
+
+	output RAM1_OEB,
+	output RAM1_CEB,
+
+	//output DDC_SCL,
+	//inout DDC_SDA,
+	
+	output SS2
    );
 	
 
 //////////Clocking	
 wire clk_TMDS, DCM_TMDS_CLKFX, pixclk, pixclkout, tmdsclk0;
-//wire clk_50M_bufg;
+wire clk_50M_bufg;
 
 //Generer 25 Mhz HDMI pikselklokke og 250Mhz HDMI bitklokke
 // 50Mhz / 2 = 25MHz
@@ -49,7 +74,7 @@ DCM_SP #(.CLKFX_MULTIPLY(5),.CLKDV_DIVIDE(2))
 	.CLK180(), .CLK270(), .CLK2X(), .CLK2X180(), .CLK90(), .CLKFX180(), .LOCKED(), .PSDONE(), .STATUS(), .DSSEN(), .PSCLK(), .PSINCDEC());
 
 BUFG BUFG_TMDSp(.I(DCM_TMDS_CLKFX), .O(clk_TMDS));
-//BUFG BUFG_50M(.I(clk_50M), .O(clk_50M_bufg));
+BUFG BUFG_50M(.I(clk_50M), .O(clk_50M_bufg));
 
 //Trengs for å drive TMDS klokken (pikselklokke) ut av kretsen
 ODDR2 #(
@@ -68,7 +93,7 @@ ODDR2 #(
 );
 
 ////////////
-wire clk12out,clkCPU,pllLocked;
+wire clk12out,clkCPU,clkCPU_180,clkMEM,pllLocked;
 
 //Generer 12Mhz for å drive MAX3421 kretsen.  Og 5,10 eller 14 Mhz for å drive CPUen.
 clk12 clockgen
@@ -77,8 +102,8 @@ clk12 clockgen
   // Clock out ports
   .CLK_OUT12(clk12out),     // OUT
   .CLK_OUT5(clkCPU),     // OUT
-  .CLK_OUT10(),     // OUT
-  .CLK_OUT14(),     // OUT
+  .CLK_OUT5_180(clkCPU_180), // OUT
+  .CLK_OUT10(clkMEM),
   // Status and control signals
   .RESET(1'b0),// IN
   .LOCKED(pllLocked));      // OUT
@@ -90,7 +115,7 @@ ODDR2 #(
 .INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
 .SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
 ) ODDR2_clk12usb (
-.Q(clk12usb), // 1-bit DDR output data
+.Q(USBCLK), // 1-bit DDR output data
 .C0(clk12out), // 1-bit clock input
 .C1(~clk12out), // 1-bit clock input
 .CE(1'b1), // 1-bit clock enable input
@@ -100,6 +125,39 @@ ODDR2 #(
 .S(1'b0) // 1-bit set input
 );
 
+//Trengs for å drive klokke ut av kretsen
+//PHI2
+ODDR2 #(
+.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+) ODDR2_PHI2 (
+.Q(PHI2), // 1-bit DDR output data
+.C0(clkCPU), // 1-bit clock input
+.C1(~clkCPU), // 1-bit clock input
+.CE(1'b1), // 1-bit clock enable input
+.D0(1'b1), // 1-bit data input (associated with C0)
+.D1(1'b0), // 1-bit data input (associated with C1)
+.R(1'b0), // 1-bit reset input
+.S(1'b0) // 1-bit set input
+);
+
+//Trengs for å drive klokke ut av kretsen
+//PHI2_180
+ODDR2 #(
+.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+) ODDR2_PHI2_180 (
+.Q(PHI2_180), // 1-bit DDR output data
+.C0(clkCPU_180), // 1-bit clock input
+.C1(~clkCPU_180), // 1-bit clock input
+.CE(1'b1), // 1-bit clock enable input
+.D0(1'b1), // 1-bit data input (associated with C0)
+.D1(1'b0), // 1-bit data input (associated with C1)
+.R(1'b0), // 1-bit reset input
+.S(1'b0) // 1-bit set input
+);
 ///////////////////////////////////////////////////////////////////////////
 
 // MEMORY
@@ -107,6 +165,7 @@ ODDR2 #(
 wire [15:0] vmemabus;
 wire [15:0] vmemabus_mod;
 wire [7:0] vmemdbus;
+wire enableVmem;
 
 wire [15:0] cpuabus;			//CPU adressebus
 wire [7:0] cpudbusO;			//CPU databus ut
@@ -121,15 +180,15 @@ wire [7:0] chrdbusV;			//Character ROM databuss for video output
 wire [10:0] colabusV;		//Farge RAM for video out
 wire [7:0] coldbusV;
 
-assign vmemabus_mod = (btn1)?(vmemabus):
-							(btn2)?(vmemabus + 16'h4B00):	//Start vidmemLo
+assign vmemabus_mod = (S1)?(vmemabus):
+							(S2)?(vmemabus + 16'h4B00):	//Start vidmemLo
 							 vmemabus+16'hB100;				//Start vidmemHi
 
 video_mem vmem1 (
-  .clka(clkCPU), // input clka
+  .clka(clkMEM), // input clka
   .ena(1'b1), // input ena
-  .wea(cpuWrite), // input [0 : 0] wea
-  .addra(cpuabus), // input [15 : 0] addra
+  .wea(cpuWrite && enableVmem), // input [0 : 0] wea
+  .addra(cpuabus [15:0]), // input [15 : 0] addra
   .dina(cpudbusO), // input [7 : 0] dina
   .douta(memcpudbusI), // output [7 : 0] douta
   .clkb(pixclk), // input clkb
@@ -158,22 +217,44 @@ colour_mem colmem (
   .spo(), // output [7 : 0] spo
   .dpo(coldbusV) // output [7 : 0] dpo
 );
+
+////////////////////////////////////////////////////////////////////////
+//Extern memory
+//512k chip
+assign RAM1_CEB = ~(((AB[23:20] == 4'b0000) && (AB[19:16] != 4'b0000)) && (VDA || VPA)); 
+assign RAM1_OEB = (~RAM1_CEB && R_WB);
+
 ////////////////////////////////////////////////////////////////////////
 // CPU
-cpu cpu1 (
-    .clk(clkCPU), 
-    .reset(~pllLocked), 
-    .AB(cpuabus), 
-    .DI(cpudbusI), 
-    .DO(cpudbusO), 
-    .WE(cpuWrite), 
-    .IRQ(cpuIRQ), 
-    .NMI(1'b0), 
-    .RDY(~btn3)
-    );
+//cpu cpu1 (
+//    .clk(clkCPU), 
+//    .reset(~pllLocked), 
+//    .AB(cpuabus), 
+//    .DI(cpudbusI), 
+//    .DO(cpudbusO), 
+//    .WE(cpuWrite), 
+//    .IRQ(cpuIRQ), 
+//    .NMI(1'b0), 
+//    .RDY(~btn3)
+//    );
+wire RDYout,RDYin;
+assign BE = 1'b1;
+assign RDYout = 1'b0;
+assign enableVmem = ((AB[23:16] == 8'b00000000) && (VDA || VPA));
+assign cpuWrite = ~R_WB;
+
+assign cpuabus = AB[15:0];
+//Tristate
+assign DB = (enableVmem && R_WB) ? cpudbusI : 8'bz;	//tristate hvis annen bank er valgt
+assign cpudbusO = DB;
+assign RDY = (S3) ? RDYout : 1'bz;
+assign RDYin = RDY;
+
+assign RESB = pllLocked;
 
 //Data i UART generer interrupt
-assign cpuIRQ = ~rx_empty;
+assign IRQB = rx_empty;
+assign NMIB = ~jiffyNMI;
 /////////////////////////////////////////////////////////////////////////
 // UART
 wire [7:0] uart_rx_data;
@@ -183,7 +264,7 @@ wire rx_empty,tx_full;
 
 
 uart uart1 (
-    .clk(clkCPU), 
+    .clk(~clkCPU), 
     .reset(~pllLocked), 
     .rd_uart(rd_uart), 
     .wr_uart(wr_uart), 
@@ -194,18 +275,20 @@ uart uart1 (
     .tx(UART_TX), 
     .r_data(uart_rx_data)
     );
-
+	 
 /////////////////////////////////////////////////////////////////////////
 //SPI
-wire spi_Start_transfer;
 wire spi_Busy;
 wire spi_New_data;
 reg [7:0] spi_Data_in;
 wire [7:0] spi_Data_out;
 reg spi_SSusb_reg=1'b0;
+reg spi_SSsdcard_reg =1'b0;
+reg spi_Start_transfer;
 
-assign spi_SSusb = ~spi_SSusb_reg;
-assign usb_RES = pllLocked;
+assign USBRESB = pllLocked;
+assign USBSS = ~spi_SSusb_reg;
+assign SS2 = ~spi_SSsdcard_reg;
 
 spi SPI_master1 (
     .clk(clk_50M), 
@@ -219,25 +302,28 @@ spi SPI_master1 (
     .busy(spi_Busy), 
     .new_data(spi_New_data)
     );
-
+	 
 /////////////////////////////////////////////////////////////////////////
 //Coprocessor
 ///////////
+//Hardware mulitplicator
 reg [31:0] mulResult;
 reg [7:0] mulFacAlo,mulFacAhi,mulFacBlo,mulFacBhi;
 always @(posedge clkCPU)
 	mulResult = {mulFacAhi,mulFacAlo} * {mulFacBhi,mulFacBlo};
+
+//Hardware videomemory X,Y to address calculator
+reg [15:0] screenAddr;
+reg [7:0] screenX,screenY;
+always @(posedge clkCPU)
+	begin
+		if(gfxMode[1]==1'b1)
+			screenAddr = (screenX + (screenY * 160)) + 16'hB100;
+		else
+			screenAddr = (screenX + (screenY * 80)) + 16'hB100;
+	end
 	
-
-
-//wire timer_int10ms;
-//intTimer timer10ms (
-//	.clk(clk_50M),
-//	.count(18'd5000000),
-//	.interrupt(timer_int10ms)
-//	);
-//assign cpuNMI=timer_int10ms;
-
+//Random number generator
 wire [7:0] randout;
 lfsr rand1 (
     .clk(clkCPU), 
@@ -245,31 +331,47 @@ lfsr rand1 (
     .en(1'b1), 
     .q(randout)
     );
+
+//Jiffy generator
+irq_gen jiffy (
+    .clk(clk_50M_bufg), 
+    .reset(~pllLocked), 
+    .irq(jiffyNMI)
+    );
+	 
 /////////////////////////////////////////////////////////////////////////
 // CPU IO
 ////////////////////////////////////////////////////////////////////////
 reg [7:0] ledstat = 0;
-assign led = ledstat;
-reg [15:0] cpuabus_reg;
-reg cpuWrite_reg;
+assign LED = ledstat;
 reg [1:0] gfxMode = 2'b0;
 
+////////////////////////////////////////////	
+///////////////// CPU WRITE ////////////////
+////////////////////////////////////////////
+
 //Når vi skriver til adresse 65000 skriver vi i virkeligheten til lysdiodene	
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65000) && cpuWrite)
 			ledstat <= cpudbusO;
 	end
 
 //Skriving til 65003 skriver til UART TX bufferet	
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65003) && cpuWrite)
 			uart_tx_data <= cpudbusO;
 		else if(cpuabus == 65007 && cpuWrite)
-			spi_SSusb_reg <= cpudbusO[1];
+			begin
+				spi_SSusb_reg <= cpudbusO[1];
+				spi_SSsdcard_reg <= cpudbusO[2];
+				spi_Start_transfer <= cpudbusO[0];
+			end
 		else if(cpuabus == 65006 && cpuWrite)
 			spi_Data_in <= cpudbusO;
+		else
+			spi_Start_transfer <= 1'b0;
 	end
 
 //Skriving til 65005 skriver til UART kontrollregisteret.
@@ -278,64 +380,78 @@ always @(posedge clkCPU)
 assign rd_uart = (cpuabus == 65005 && cpuWrite) ? cpudbusO[1] : 1'b0;
 assign wr_uart = (cpuabus == 65005 && cpuWrite) ? cpudbusO[0] : 1'b0;
 
-assign spi_Start_transfer = (cpuabus == 65007 && cpuWrite) ? cpudbusO[0] : 1'b0;
+//assign spi_Start_transfer = (cpuabus == 65007 && cpuWrite) ? cpudbusO[0] : 1'b0;
 	
 //HW multiplikator faktor A = 65010,65011, B = 65012,65013
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65010) && cpuWrite)
 			mulFacAlo <= cpudbusO;
 	end	
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65011) && cpuWrite)
 			mulFacAhi <= cpudbusO;
 	end	
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65012) && cpuWrite)
 			mulFacBlo <= cpudbusO;
 	end	
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65013) && cpuWrite)
 			mulFacBhi <= cpudbusO;
 	end
+	
+always @(negedge clkCPU)
+	begin
+		if((cpuabus == 65020) && cpuWrite)
+			screenX <= cpudbusO;
+	end
+always @(negedge clkCPU)
+	begin
+		if((cpuabus == 65021) && cpuWrite)
+			screenY <= cpudbusO;
+	end
+	
 //gfxMode bit 1 lavt: Textmodus
 //gfxMode bit 1 høyt: Grafikkmodus	
-always @(posedge clkCPU)
+always @(negedge clkCPU)
 	begin
 		if((cpuabus == 65018) && cpuWrite)
 			gfxMode <= cpudbusO[1:0];
 	end	
 	
-//Data input bussen til CPUen må forsinkes en syklus når den ikke leser fra synkron BRAM.
-always @(posedge clkCPU)
-	begin
-		cpuabus_reg <= cpuabus;
-		cpuWrite_reg <= cpuWrite;
-	end
-	
+////////////////////////////////////////////	
+///////////////// CPU READ /////////////////
+////////////////////////////////////////////
+
 //Lesing fra adresse 65001 vil lese dilswitchene
 //Lesing fra adresse 65002 vil lese data i UART RX buffer
 //Lesing fra adresse 65004 vil lese UART status D0: TX full, D1: RX tom
 //65014-65017 HW multiplikator resultat
 //65018 Pseudo random generator
-assign cpudbusI = ((cpuabus_reg == 65001) && ~cpuWrite_reg) ? dilswitch :
+assign cpudbusI = //((cpuabus == 65001) && ~cpuWrite) ? dilswitch :
 
-						(cpuabus_reg == 65002 && ~cpuWrite_reg)? uart_rx_data :
-						(cpuabus_reg == 65004 && ~cpuWrite_reg)? {6'b000000,rx_empty,tx_full} :
+						(cpuabus == 65002 && ~cpuWrite)? uart_rx_data :
+						(cpuabus == 65004 && ~cpuWrite)? {6'b000000,rx_empty,tx_full} :
 						
-						(cpuabus_reg == 65009 && ~cpuWrite_reg)? {6'b000000,spi_New_data,spi_Busy} :
-						(cpuabus_reg == 65008 && ~cpuWrite_reg)? spi_Data_out :
+						(cpuabus == 65009 && ~cpuWrite)? {6'b000000,spi_New_data,spi_Busy} :
+						(cpuabus == 65008 && ~cpuWrite)? spi_Data_out :
 						
-						(cpuabus_reg == 65014 && ~cpuWrite_reg)? mulResult[7:0] :
-						(cpuabus_reg == 65015 && ~cpuWrite_reg)? mulResult[15:8] :
-						(cpuabus_reg == 65016 && ~cpuWrite_reg)? mulResult[23:16] :
-						(cpuabus_reg == 65017 && ~cpuWrite_reg)? mulResult[31:24] :
+						(cpuabus == 65014 && ~cpuWrite)? mulResult[7:0] :
+						(cpuabus == 65015 && ~cpuWrite)? mulResult[15:8] :
+						(cpuabus == 65016 && ~cpuWrite)? mulResult[23:16] :
+						(cpuabus == 65017 && ~cpuWrite)? mulResult[31:24] :
 						
-						(cpuabus_reg == 65019 && ~cpuWrite_reg)? randout :
+						(cpuabus == 65019 && ~cpuWrite)? randout :
+						
+						(cpuabus == 65022 && ~cpuWrite)? screenAddr[7:0] :
+						(cpuabus == 65023 && ~cpuWrite)? screenAddr[15:8] :
+						
 						memcpudbusI;
+
 
 /////////////////////////////////////////////////////////////////////////
 // VIDEO OUTPUT
@@ -363,27 +479,7 @@ OBUFDS OBUFDS_clock(.I(pixclkout), .O(TMDSp_clock), .OB(TMDSn_clock));
 
 endmodule
 //////////////////////////////////////////////////////////////////////////
-//Timer
-module intTimer(
-input clk,
-input [18:0] count,
-output reg interrupt
-);
-	reg [18:0] counter=0;
-	always @(posedge clk)
-		begin
-			if(counter >= count)
-				begin
-					interrupt <= 1'b1;
-					counter <= 18'd0;
-				end
-			else
-				begin
-					interrupt <= 1'b0;
-					counter <= counter + 1'b1;
-				end
-		end
-endmodule
+
 /////////////////////////////////////////////////////////////////////////
 //Pseudorandom generator
 module lfsr(input clk, reset, en, output reg [7:0] q);
@@ -394,3 +490,45 @@ module lfsr(input clk, reset, en, output reg [7:0] q);
       q <= {q[6:0], q[7] ^ q[5] ^ q[4] ^ q[3]}; // polynomial for maximal LFSR
   end
 endmodule
+
+////////////////////////////////////////////////////////////////////////
+//Generer interrupt hvert 10ms
+module irq_gen
+(
+   input   clk, reset,
+   output  irq
+);
+
+parameter  INTERVAL   = 'd500000,		//Hvert 10ms ved 50Mhz
+           IRQ_LENGTH = 'd50;
+           
+localparam INT_W  = log2(INTERVAL);
+
+
+reg [INT_W-1:0]      cnt_int;
+reg [IRQ_LENGTH-1:0] irq_reg;
+
+
+ always @(posedge clk or posedge reset)
+    if ( reset )  
+          cnt_int <= {INT_W{1'b0}};
+    else
+      if ( cnt_int == INTERVAL )  cnt_int <= 'h0;
+      else                        cnt_int <= cnt_int + 1'b1;
+           
+ always @(posedge clk)
+   if    ( cnt_int == INTERVAL )  irq_reg <= 'h1;
+   else                           irq_reg <= irq_reg << 1;
+  
+assign irq = |irq_reg;
+
+////////////  log2 function  //////////////
+function integer log2;                   //
+input [31:0] value;                      //
+for (log2=0; value>0; log2=log2+1)       //
+    value = value>>1;                    //
+endfunction                              //
+///////////////////////////////////////////
+
+endmodule
+////////////////////////////////////////////////////////////////////////////

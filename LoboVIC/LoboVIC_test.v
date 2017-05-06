@@ -71,6 +71,7 @@ module LoboVIC_test;
 		#100;
         
 		// Add stimulus here
+		 
 	end
    always #10 clk_50M = ~clk_50M;   
 endmodule

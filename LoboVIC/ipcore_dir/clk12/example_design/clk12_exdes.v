@@ -108,8 +108,8 @@ module clk12_exdes
     // Clock out ports
     .CLK_OUT12           (clk_int[1]),
     .CLK_OUT5           (clk_int[2]),
-    .CLK_OUT10           (clk_int[3]),
-    .CLK_OUT14           (clk_int[4]),
+    .CLK_OUT5_180           (clk_int[3]),
+    .CLK_OUT10           (clk_int[4]),
     // Status and control signals
     .RESET              (RESET),
     .LOCKED             (LOCKED));

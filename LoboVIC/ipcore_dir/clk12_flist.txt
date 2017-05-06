@@ -2,6 +2,7 @@
 _xmsgs\pn_parser.xmsgs
 clk12.asy
 clk12.gise
+clk12.sym
 clk12.ucf
 clk12.v
 clk12.veo

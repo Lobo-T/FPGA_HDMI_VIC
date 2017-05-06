@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Trond\FPGA\LoboVIC\LoboVIC.ncd
-OUTFILE=C:\Users\Trond\FPGA\LoboVIC\LoboVIC.bit
+INFILE=C:\Users\Trond\FPGA\LoboVIC-extern CPU\LoboVIC.ncd
+OUTFILE=C:\Users\Trond\FPGA\LoboVIC-extern CPU\LoboVIC.bit
 FAMILY=Spartan6
 PART=xc6slx9-2tqg144
-WORKINGDIR=C:\Users\Trond\FPGA\LoboVIC
+WORKINGDIR=C:\Users\Trond\FPGA\LoboVIC-extern CPU
 LICENSE=WebPack
 USER_INFO=211293876_0_0_972

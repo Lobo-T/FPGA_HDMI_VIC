@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Mon Apr 17 14:40:50 2017
+# Date: Sat May 06 16:46:36 2017
 #
 ##############################################################
 #
@@ -46,7 +46,7 @@ CSET axi_id_width=4
 CSET axi_slave_type=Memory_Slave
 CSET axi_type=AXI4_Full
 CSET byte_size=9
-CSET coe_file=C:\Users\Trond\FPGA\LoboVIC\spitest.coe
+CSET coe_file="C:\Users\Trond\FPGA\LoboVIC-extern CPU\extcputest.coe"
 CSET collision_warnings=ALL
 CSET component_name=video_mem
 CSET disable_collision_warnings=false
@@ -105,4 +105,4 @@ CSET write_width_b=8
 MISC pkg_timestamp=2012-11-19T16:22:25Z
 # END Extra information
 GENERATE
-# CRC: bf2c4cfa
+# CRC: 3fce6daa

@@ -5,13 +5,34 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC/LoboVIC_test.v" Line 45: Port <arg fmt="%s" index="1">usb_RES</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" Line 240: Redeclaration of ansi port <arg fmt="%s" index="1">BE</arg> is not allowed
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC/LoboVIC.v" Line 155: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dpra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">13</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="267" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 45: Cannot find port <arg fmt="%s" index="1">led</arg> on this module
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC/LoboVIC.v" Line 289: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">colabus</arg>&gt;. Formal port size is <arg fmt="%d" index="2">13</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
+<msg type="error" file="HDLCompiler" num="25" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 49: Module &lt;<arg fmt="%s" index="1">LoboVIC</arg>&gt; does not have a port named &lt;<arg fmt="%s" index="2">btn3</arg>&gt;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="25" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 50: Module &lt;<arg fmt="%s" index="1">LoboVIC</arg>&gt; does not have a port named &lt;<arg fmt="%s" index="2">clk12usb</arg>&gt;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="25" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 51: Module &lt;<arg fmt="%s" index="1">LoboVIC</arg>&gt; does not have a port named &lt;<arg fmt="%s" index="2">dilswitch</arg>&gt;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="25" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 52: Module &lt;<arg fmt="%s" index="1">LoboVIC</arg>&gt; does not have a port named &lt;<arg fmt="%s" index="2">led</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC_test.v" Line 45: Port <arg fmt="%s" index="1">LED</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" Line 214: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dpra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">13</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Trond/FPGA/LoboVIC-extern CPU/LoboVIC.v" Line 343: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">colabus</arg>&gt;. Formal port size is <arg fmt="%d" index="2">13</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
+</msg>
+
+<msg type="error" file="Simulator" num="778" delta="unknown" >Static elaboration of top level Verilog design unit(s) in library <arg fmt="%s" index="1">work</arg> failed
 </msg>
 
 </messages>
