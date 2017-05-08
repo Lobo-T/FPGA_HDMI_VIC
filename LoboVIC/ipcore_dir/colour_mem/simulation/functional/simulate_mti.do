@@ -54,13 +54,13 @@ vcom -work work ../../example_design/colour_mem_exdes.vhd
 
 echo "Compiling Test Bench Files"
 
-vcom -work work    ../colour_mem_tb_pkg.vhd
-vcom -work work    ../colour_mem_tb_rng.vhd
-vcom -work work    ../colour_mem_tb_dgen.vhd
-vcom -work work    ../colour_mem_tb_agen.vhd
-vcom -work work    ../colour_mem_tb_checker.vhd
-vcom -work work    ../colour_mem_tb_stim_gen.vhd
-vcom -work work    ../colour_mem_tb_synth.vhd 
+vcom -work work    ../bmg_tb_pkg.vhd
+vcom -work work    ../random.vhd
+vcom -work work    ../data_gen.vhd
+vcom -work work    ../addr_gen.vhd
+vcom -work work    ../checker.vhd
+vcom -work work    ../bmg_stim_gen.vhd
+vcom -work work    ../colour_mem_synth.vhd 
 vcom -work work    ../colour_mem_tb.vhd
 
 

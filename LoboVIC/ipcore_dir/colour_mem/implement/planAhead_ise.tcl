@@ -44,6 +44,7 @@
 # THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
 # PART OF THIS FILE AT ALL TIMES.
 
+
 set device xc6slx9tqg144-2
 set projName colour_mem
 set design colour_mem

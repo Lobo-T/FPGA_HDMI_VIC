@@ -46,7 +46,8 @@
 set work work
 #--------------------------------------------------------------------------------
 cp ../../../colour_mem.mif .
- vlib work 
+
+vlib work
 vmap work work
 
 echo "Compiling Core Verilog UNISIM/Behavioral model"
@@ -54,18 +55,16 @@ vlog -work work ../../implement/results/routed.v
 
 echo "Compiling Test Bench Files"
 
-vcom -work work    ../colour_mem_tb_pkg.vhd
-vcom -work work    ../colour_mem_tb_rng.vhd
-vcom -work work    ../colour_mem_tb_dgen.vhd
-vcom -work work    ../colour_mem_tb_agen.vhd
-vcom -work work    ../colour_mem_tb_checker.vhd
-vcom -work work    ../colour_mem_tb_stim_gen.vhd
-vcom -work work    ../colour_mem_tb_synth.vhd 
+vcom -work work    ../bmg_tb_pkg.vhd
+vcom -work work    ../random.vhd
+vcom -work work    ../data_gen.vhd
+vcom -work work    ../addr_gen.vhd
+vcom -work work    ../checker.vhd
+vcom -work work    ../bmg_stim_gen.vhd
+vcom -work work    ../colour_mem_synth.vhd 
 vcom -work work    ../colour_mem_tb.vhd
 
-
-vlog -work work $env(XILINX)/verilog/src/glbl.v
-    vsim -novopt -t ps  -L simprims_ver +transport_int_delays -sdftyp /colour_mem_tb/colour_mem_tb_synth_inst/dmg_port=../../implement/results/routed.sdf $work.colour_mem_tb $work.glbl -novopt
+    vsim -novopt -t ps  -L simprims_ver +transport_int_delays -sdftyp /colour_mem_tb/colour_mem_synth_inst/bmg_port=../../implement/results/routed.sdf $work.colour_mem_tb $work.glbl -novopt
 
 #Disabled waveform to save the disk space
 add log -r /*

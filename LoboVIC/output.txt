@@ -1,7 +1,7 @@
 Storage Target: SPI Flash Single FPGA
 64M
 FF
-lobovic
+Untitled
 C:\Users\Trond\FPGA\LoboVIC\
 
 MCS

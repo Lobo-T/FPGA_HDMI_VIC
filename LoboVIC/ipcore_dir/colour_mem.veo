@@ -27,14 +27,19 @@
 *******************************************************************************/
 
 /*******************************************************************************
-*     Generated from core with identifier: xilinx.com:ip:dist_mem_gen:7.2      *
+*     Generated from core with identifier: xilinx.com:ip:blk_mem_gen:7.3       *
 *                                                                              *
-*     Rev 1. The LogiCORE Xilinx Distributed Memory Generator creates area     *
-*     and performance optimized ROM blocks, single and dual port               *
-*     distributed memories, and SRL16-based memories for Xilinx FPGAs. The     *
-*     core supersedes the previously released LogiCORE Distributed Memory      *
-*     core. Use this core in all new designs for supported families            *
-*     wherever a distributed memory is required.                               *
+*     The Xilinx LogiCORE IP Block Memory Generator replaces the Dual Port     *
+*     Block Memory and Single Port Block Memory LogiCOREs, but is not a        *
+*     direct drop-in replacement.  It should be used in all new Xilinx         *
+*     designs. The core supports RAM and ROM functions over a wide range of    *
+*     widths and depths. Use this core to generate block memories with         *
+*     symmetric or asymmetric read and write port widths, as well as cores     *
+*     which can perform simultaneous write operations to separate              *
+*     locations, and simultaneous read operations from the same location.      *
+*     For more information on differences in interface and feature support     *
+*     between this core and the Dual Port Block Memory and Single Port         *
+*     Block Memory LogiCOREs, please consult the data sheet.                   *
 *******************************************************************************/
 
 // The following must be inserted into your Verilog file for this
@@ -43,13 +48,17 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 colour_mem your_instance_name (
-  .a(a), // input [12 : 0] a
-  .d(d), // input [7 : 0] d
-  .dpra(dpra), // input [12 : 0] dpra
-  .clk(clk), // input clk
-  .we(we), // input we
-  .spo(spo), // output [7 : 0] spo
-  .dpo(dpo) // output [7 : 0] dpo
+  .clka(clka), // input clka
+  .ena(ena), // input ena
+  .wea(wea), // input [0 : 0] wea
+  .addra(addra), // input [12 : 0] addra
+  .dina(dina), // input [7 : 0] dina
+  .douta(douta), // output [7 : 0] douta
+  .clkb(clkb), // input clkb
+  .web(web), // input [0 : 0] web
+  .addrb(addrb), // input [12 : 0] addrb
+  .dinb(dinb), // input [7 : 0] dinb
+  .doutb(doutb) // output [7 : 0] doutb
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

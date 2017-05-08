@@ -1,18 +1,23 @@
+ 
+ 
+ 
+
+
 
 
 --------------------------------------------------------------------------------
 --
--- Distributed Memory Generator Core - Top-level core wrapper
+-- BLK MEM GEN v7.1 Core - Top-level core wrapper
 --
 --------------------------------------------------------------------------------
 --
--- (c) Copyright 2009 - 2010 Xilinx, Inc. All rights reserved.
--- 
+-- (c) Copyright 2006-2010 Xilinx, Inc. All rights reserved.
+--
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
 -- international copyright and other intellectual property
 -- laws.
--- 
+--
 -- DISCLAIMER
 -- This disclaimer is not a license and does not grant any
 -- rights to the materials distributed herewith. Except as
@@ -34,7 +39,7 @@
 -- by a third party) even if such damage or loss was
 -- reasonably foreseeable or Xilinx had been advised of the
 -- possibility of the same.
--- 
+--
 -- CRITICAL APPLICATIONS
 -- Xilinx products are not designed or intended to be fail-
 -- safe, or for use in any application requiring fail-safe
@@ -48,88 +53,148 @@
 -- liability of any use of Xilinx products in Critical
 -- Applications, subject only to applicable laws and
 -- regulations governing limitations on product liability.
--- 
+--
 -- THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
 -- PART OF THIS FILE AT ALL TIMES.
---
+
 --------------------------------------------------------------------------------
 --
+-- Filename: colour_mem_exdes.vhd
 --
 -- Description:
---   This is the actual DMG core wrapper.
+--   This is the actual BMG core wrapper.
+--
+--------------------------------------------------------------------------------
+-- Author: IP Solutions Division
+--
+-- History: August 31, 2005 - First Release
+--------------------------------------------------------------------------------
 --
 --------------------------------------------------------------------------------
 -- Library Declarations
 --------------------------------------------------------------------------------
 
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-library unisim;
-use unisim.vcomponents.all;
+LIBRARY UNISIM;
+USE UNISIM.VCOMPONENTS.ALL;
 
 --------------------------------------------------------------------------------
 -- Entity Declaration
 --------------------------------------------------------------------------------
-entity colour_mem_exdes is
+ENTITY colour_mem_exdes IS
   PORT (
-    DPRA       : IN  STD_LOGIC_VECTOR(13-1 downto 0)           := (OTHERS => '0');
-    CLK        : IN  STD_LOGIC                                                := '0';
-    WE         : IN  STD_LOGIC                                                := '0';
-    SPO        : OUT STD_LOGIC_VECTOR(8-1 downto 0);
-    DPO        : OUT STD_LOGIC_VECTOR(8-1 downto 0);
-    A          : IN  STD_LOGIC_VECTOR(13-1-(4*0*boolean'pos(13>4)) downto 0)
-                 := (OTHERS => '0');
-    D          : IN  STD_LOGIC_VECTOR(8-1 downto 0)                := (OTHERS => '0')
-      );
+      --Inputs - Port A
+    ENA            : IN STD_LOGIC;  --opt port
+  
+    WEA            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+  
+    DINA           : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+  
+    DOUTA          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+  
+    CLKA       : IN STD_LOGIC;
 
-end colour_mem_exdes;
+  
+      --Inputs - Port B
+  
+    WEB            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ADDRB          : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+  
+    DINB           : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    DOUTB          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    CLKB           : IN STD_LOGIC
+
+  );
+
+END colour_mem_exdes;
 
 
+ARCHITECTURE xilinx OF colour_mem_exdes IS
 
-architecture xilinx of colour_mem_exdes is
-
-    SIGNAL CLK_i    : std_logic;
-    
-  component colour_mem is
+  COMPONENT BUFG IS
   PORT (
+     I      : IN STD_ULOGIC;
+     O      : OUT STD_ULOGIC
+  );
+  END COMPONENT;
 
-    DPRA                    : IN  STD_LOGIC_VECTOR(13-1 downto 0)           := (OTHERS => '0');
-    CLK                     : IN STD_LOGIC;
-    WE                      : IN  STD_LOGIC;
-    SPO                     : OUT STD_LOGIC_VECTOR(8-1 downto 0);
-    DPO                     : OUT STD_LOGIC_VECTOR(8-1 downto 0);
-    A                       : IN  STD_LOGIC_VECTOR(13-1-(4*0*boolean'pos(13>4)) downto 0)
-                              := (OTHERS => '0');
-    D                       : IN  STD_LOGIC_VECTOR(8-1 downto 0)                := (OTHERS => '0')
+  COMPONENT colour_mem IS
+  PORT (
+      --Port A
+    ENA        : IN STD_LOGIC;  --opt port
+  
+    WEA        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+  
+    DINA       : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+  
+    DOUTA      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-);
-  end component;
+  
+    CLKA       : IN STD_LOGIC;
 
-
-begin
-
-  dmg0 : colour_mem
-    port map (
-
-      DPRA                    => DPRA,
-      CLK                     => CLK_i,
-      WE                      => WE,
-      SPO                     => SPO,
-      DPO                     => DPO,
-      A                       => A,
-      D                       => D
-
-      );
-
-clk_buf: bufg
-    PORT MAP(
-      i => CLK,
-      o => CLK_i
-      );
+  
+      --Port B
+  
+    WEB        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ADDRB      : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+  
+    DINB       : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    DOUTB      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    CLKB       : IN STD_LOGIC
 
 
+  );
+  END COMPONENT;
 
-end xilinx;
+  SIGNAL CLKA_buf     : STD_LOGIC;
+  SIGNAL CLKB_buf     : STD_LOGIC;
+  SIGNAL S_ACLK_buf   : STD_LOGIC;
+
+BEGIN
+
+  bufg_A : BUFG
+    PORT MAP (
+     I => CLKA,
+     O => CLKA_buf
+     );
+
+  bufg_B : BUFG
+    PORT MAP (
+     I => CLKB,
+     O => CLKB_buf
+     );
+
+
+  bmg0 : colour_mem
+    PORT MAP (
+      --Port A
+      ENA        => ENA,
+  
+      WEA        => WEA,
+      ADDRA      => ADDRA,
+  
+      DINA       => DINA,
+  
+      DOUTA      => DOUTA,
+
+      CLKA       => CLKA_buf,
+
+  
+      --Port B
+  
+      WEB        => WEB,
+      ADDRB      => ADDRB,
+  
+      DINB       => DINB,
+      DOUTB      => DOUTB,
+      CLKB       => CLKB_buf
+
+    );
+
+END xilinx;

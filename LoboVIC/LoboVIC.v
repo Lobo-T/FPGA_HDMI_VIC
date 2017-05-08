@@ -165,24 +165,38 @@ ODDR2 #(
 wire [15:0] vmemabus;
 wire [15:0] vmemabus_mod;
 wire [7:0] vmemdbus;
+wire enableFPGAmem;
 wire enableVmem;
+wire enableColmem;
+wire enableChrmem;
 
 wire [15:0] cpuabus;			//CPU adressebus
 wire [7:0] cpudbusO;			//CPU databus ut
 wire [7:0] cpudbusI;			//CPU dabus inn
 wire [7:0] memcpudbusI;		//Data ut fra minne, inn til CPU
+wire [7:0] vmemcpudbusI;
+wire [7:0] colmemcpudbusI;
+wire [7:0] charmemcpudbusI;
 wire cpuWrite;					//Er høy når CPUen skriver, motsatt av en fysisk 6502.
 
 wire [10:0] chrabusV;		//Character ROM adressebuss for video output
 wire [7:0] chrdbusV;			//Character ROM databuss for video output
 
-//Skal egentlig være 12:0, tom for ram.  Må dele opp blokkramen.
-wire [10:0] colabusV;		//Farge RAM for video out
+wire [12:0] colabusV;		//Farge RAM for video out
 wire [7:0] coldbusV;
 
 assign vmemabus_mod = (S1)?(vmemabus):
 							(S2)?(vmemabus + 16'h4B00):	//Start vidmemLo
-							 vmemabus+16'hB100;				//Start vidmemHi
+							 vmemabus+16'h9600;				//Start vidmemHi
+
+assign enableFPGAmem = ((AB[23:16] == 8'b00000000) && (VDA || VPA));							 
+assign enableVmem = enableFPGAmem && (AB[15:0] < 16'hE100);
+assign enableColmem = enableFPGAmem && (AB[15:0] >= 16'hE900) && (AB[15:0] < 16'hFD00);
+assign enableChrmem = enableFPGAmem && (AB[15:0] >= 16'hE100) && (AB[15:0] < 16'hE900);
+
+assign memcpudbusI = (enableColmem)	? (colmemcpudbusI)  : 
+							(enableChrmem)	? (charmemcpudbusI) :
+												  (vmemcpudbusI);
 
 video_mem vmem1 (
   .clka(clkMEM), // input clka
@@ -190,7 +204,7 @@ video_mem vmem1 (
   .wea(cpuWrite && enableVmem), // input [0 : 0] wea
   .addra(cpuabus [15:0]), // input [15 : 0] addra
   .dina(cpudbusO), // input [7 : 0] dina
-  .douta(memcpudbusI), // output [7 : 0] douta
+  .douta(vmemcpudbusI), // output [7 : 0] douta
   .clkb(pixclk), // input clkb
   .web(1'b0), // input [0 : 0] web
   .addrb(vmemabus_mod), // input [15 : 0] addrb
@@ -199,53 +213,44 @@ video_mem vmem1 (
 );
 
 charrom_CP865 charmem (
-  .a(11'b0), // input [10 : 0] a
-  .d(8'b0), // input [7 : 0] d
+  .a((cpuabus [15:0])-16'hE100), // input [10 : 0] a
+  .d(cpudbusO), // input [7 : 0] d
   .dpra(chrabusV), // input [10 : 0] dpra
-  .clk(pixclk), // input clk
-  .we(1'b0), // input we
-  .spo(), // output [7 : 0] spo
+  .clk(clkMEM), // input clk
+  .we(cpuWrite && enableChrmem), // input we
+  .spo(charmemcpudbusI), // output [7 : 0] spo
   .dpo(chrdbusV) // output [7 : 0] dpo
 );
 
 colour_mem colmem (
-  .a(13'b0), // input [12 : 0] a
-  .d(8'b0), // input [7 : 0] d
-  .dpra(colabusV), // input [12 : 0] dpra
-  .clk(pixclk), // input clk
-  .we(1'b0), // input we
-  .spo(), // output [7 : 0] spo
-  .dpo(coldbusV) // output [7 : 0] dpo
+  .clka(clkMEM), // input clka
+  .ena(1'b1), // input ena
+  .wea(cpuWrite && enableColmem), // input [0 : 0] wea
+  .addra((cpuabus [15:0])-16'hE900), // input [12 : 0] addra
+  .dina(cpudbusO), // input [7 : 0] dina
+  .douta(colmemcpudbusI), // output [7 : 0] douta
+  .clkb(pixclk), // input clkb
+  .web(1'b0), // input [0 : 0] web
+  .addrb(colabusV), // input [12 : 0] addrb
+  .dinb(8'b0), // input [7 : 0] dinb
+  .doutb(coldbusV) // output [7 : 0] doutb
 );
-
 ////////////////////////////////////////////////////////////////////////
 //Extern memory
 //512k chip
 assign RAM1_CEB = ~(((AB[23:20] == 4'b0000) && (AB[19:16] != 4'b0000)) && (VDA || VPA)); 
-assign RAM1_OEB = (~RAM1_CEB && R_WB);
+assign RAM1_OEB = ~(~RAM1_CEB && R_WB);
 
 ////////////////////////////////////////////////////////////////////////
-// CPU
-//cpu cpu1 (
-//    .clk(clkCPU), 
-//    .reset(~pllLocked), 
-//    .AB(cpuabus), 
-//    .DI(cpudbusI), 
-//    .DO(cpudbusO), 
-//    .WE(cpuWrite), 
-//    .IRQ(cpuIRQ), 
-//    .NMI(1'b0), 
-//    .RDY(~btn3)
-//    );
+//CPU signals
 wire RDYout,RDYin;
 assign BE = 1'b1;
 assign RDYout = 1'b0;
-assign enableVmem = ((AB[23:16] == 8'b00000000) && (VDA || VPA));
 assign cpuWrite = ~R_WB;
 
 assign cpuabus = AB[15:0];
 //Tristate
-assign DB = (enableVmem && R_WB) ? cpudbusI : 8'bz;	//tristate hvis annen bank er valgt
+assign DB = (enableFPGAmem && R_WB) ? cpudbusI : 8'bz;	//tristate hvis annen bank er valgt
 assign cpudbusO = DB;
 assign RDY = (S3) ? RDYout : 1'bz;
 assign RDYin = RDY;
@@ -318,9 +323,9 @@ reg [7:0] screenX,screenY;
 always @(posedge clkCPU)
 	begin
 		if(gfxMode[1]==1'b1)
-			screenAddr = (screenX + (screenY * 160)) + 16'hB100;
+			screenAddr = (screenX + (screenY * 160)) + 16'h9600;
 		else
-			screenAddr = (screenX + (screenY * 80)) + 16'hB100;
+			screenAddr = (screenX + (screenY * 80)) + 16'h9600;
 	end
 	
 //Random number generator
@@ -353,22 +358,22 @@ reg [1:0] gfxMode = 2'b0;
 //Når vi skriver til adresse 65000 skriver vi i virkeligheten til lysdiodene	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65000) && cpuWrite)
+		if((cpuabus == 65000) && cpuWrite && enableFPGAmem)
 			ledstat <= cpudbusO;
 	end
 
 //Skriving til 65003 skriver til UART TX bufferet	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65003) && cpuWrite)
+		if((cpuabus == 65003) && cpuWrite && enableFPGAmem)
 			uart_tx_data <= cpudbusO;
-		else if(cpuabus == 65007 && cpuWrite)
+		else if(cpuabus == 65007 && cpuWrite && enableFPGAmem)
 			begin
 				spi_SSusb_reg <= cpudbusO[1];
 				spi_SSsdcard_reg <= cpudbusO[2];
 				spi_Start_transfer <= cpudbusO[0];
 			end
-		else if(cpuabus == 65006 && cpuWrite)
+		else if(cpuabus == 65006 && cpuWrite && enableFPGAmem)
 			spi_Data_in <= cpudbusO;
 		else
 			spi_Start_transfer <= 1'b0;
@@ -377,41 +382,41 @@ always @(negedge clkCPU)
 //Skriving til 65005 skriver til UART kontrollregisteret.
 //D0: Start TX
 //D1: Data i RX lest (hent neste fra FIFO)
-assign rd_uart = (cpuabus == 65005 && cpuWrite) ? cpudbusO[1] : 1'b0;
-assign wr_uart = (cpuabus == 65005 && cpuWrite) ? cpudbusO[0] : 1'b0;
+assign rd_uart = (cpuabus == 65005 && cpuWrite && enableFPGAmem) ? cpudbusO[1] : 1'b0;
+assign wr_uart = (cpuabus == 65005 && cpuWrite && enableFPGAmem) ? cpudbusO[0] : 1'b0;
 
 //assign spi_Start_transfer = (cpuabus == 65007 && cpuWrite) ? cpudbusO[0] : 1'b0;
 	
 //HW multiplikator faktor A = 65010,65011, B = 65012,65013
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65010) && cpuWrite)
+		if((cpuabus == 65010) && cpuWrite && enableFPGAmem)
 			mulFacAlo <= cpudbusO;
 	end	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65011) && cpuWrite)
+		if((cpuabus == 65011) && cpuWrite && enableFPGAmem)
 			mulFacAhi <= cpudbusO;
 	end	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65012) && cpuWrite)
+		if((cpuabus == 65012) && cpuWrite && enableFPGAmem)
 			mulFacBlo <= cpudbusO;
 	end	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65013) && cpuWrite)
+		if((cpuabus == 65013) && cpuWrite && enableFPGAmem)
 			mulFacBhi <= cpudbusO;
 	end
 	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65020) && cpuWrite)
+		if((cpuabus == 65020) && cpuWrite && enableFPGAmem)
 			screenX <= cpudbusO;
 	end
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65021) && cpuWrite)
+		if((cpuabus == 65021) && cpuWrite && enableFPGAmem)
 			screenY <= cpudbusO;
 	end
 	
@@ -419,7 +424,7 @@ always @(negedge clkCPU)
 //gfxMode bit 1 høyt: Grafikkmodus	
 always @(negedge clkCPU)
 	begin
-		if((cpuabus == 65018) && cpuWrite)
+		if((cpuabus == 65018) && cpuWrite && enableFPGAmem)
 			gfxMode <= cpudbusO[1:0];
 	end	
 	
@@ -434,21 +439,34 @@ always @(negedge clkCPU)
 //65018 Pseudo random generator
 assign cpudbusI = //((cpuabus == 65001) && ~cpuWrite) ? dilswitch :
 
-						(cpuabus == 65002 && ~cpuWrite)? uart_rx_data :
-						(cpuabus == 65004 && ~cpuWrite)? {6'b000000,rx_empty,tx_full} :
+						(cpuabus == 65002 && ~cpuWrite && enableFPGAmem)? uart_rx_data :
+						(cpuabus == 65004 && ~cpuWrite && enableFPGAmem)? {6'b000000,rx_empty,tx_full} :
 						
-						(cpuabus == 65009 && ~cpuWrite)? {6'b000000,spi_New_data,spi_Busy} :
-						(cpuabus == 65008 && ~cpuWrite)? spi_Data_out :
+						(cpuabus == 65009 && ~cpuWrite && enableFPGAmem)? {6'b000000,spi_New_data,spi_Busy} :
+						(cpuabus == 65008 && ~cpuWrite && enableFPGAmem)? spi_Data_out :
 						
-						(cpuabus == 65014 && ~cpuWrite)? mulResult[7:0] :
-						(cpuabus == 65015 && ~cpuWrite)? mulResult[15:8] :
-						(cpuabus == 65016 && ~cpuWrite)? mulResult[23:16] :
-						(cpuabus == 65017 && ~cpuWrite)? mulResult[31:24] :
+						(cpuabus == 65014 && ~cpuWrite && enableFPGAmem)? mulResult[7:0] :
+						(cpuabus == 65015 && ~cpuWrite && enableFPGAmem)? mulResult[15:8] :
+						(cpuabus == 65016 && ~cpuWrite && enableFPGAmem)? mulResult[23:16] :
+						(cpuabus == 65017 && ~cpuWrite && enableFPGAmem)? mulResult[31:24] :
 						
-						(cpuabus == 65019 && ~cpuWrite)? randout :
+						(cpuabus == 65019 && ~cpuWrite && enableFPGAmem)? randout :
 						
-						(cpuabus == 65022 && ~cpuWrite)? screenAddr[7:0] :
-						(cpuabus == 65023 && ~cpuWrite)? screenAddr[15:8] :
+						(cpuabus == 65022 && ~cpuWrite && enableFPGAmem)? screenAddr[7:0] :
+						(cpuabus == 65023 && ~cpuWrite && enableFPGAmem)? screenAddr[15:8] :
+						
+						(cpuabus == 16'hffea && ~cpuWrite && enableFPGAmem)? 8'h52 :	//NMI
+						(cpuabus == 16'hffeb && ~cpuWrite && enableFPGAmem)? 8'hd :
+						(cpuabus == 16'hfffa && ~cpuWrite && enableFPGAmem)? 8'h52 :	//NMI
+						(cpuabus == 16'hfffb && ~cpuWrite && enableFPGAmem)? 8'hd :
+
+						(cpuabus == 16'hffee && ~cpuWrite && enableFPGAmem)? 8'h2e:		//IRQ
+						(cpuabus == 16'hffef && ~cpuWrite && enableFPGAmem)? 8'hd :
+						(cpuabus == 16'hfffe && ~cpuWrite && enableFPGAmem)? 8'h2e:		//IRQ
+						(cpuabus == 16'hffff && ~cpuWrite && enableFPGAmem)? 8'hd :
+
+						(cpuabus == 16'hfffc && ~cpuWrite && enableFPGAmem)? 8'h0 :		//Reset
+						(cpuabus == 16'hfffd && ~cpuWrite && enableFPGAmem)? 8'h2 :
 						
 						memcpudbusI;
 

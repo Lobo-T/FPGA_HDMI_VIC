@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module spi #(parameter CLK_DIV = 2)(
+module spi #(parameter CLK_DIV = 4)(
     input clk,
     input rst,
     input miso,
