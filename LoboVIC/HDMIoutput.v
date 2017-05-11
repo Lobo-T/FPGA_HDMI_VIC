@@ -119,8 +119,16 @@ end
 //always @(posedge pixclk)
 //	$display("X:%d Y:%d : ab:%d:db:%d :  Xm:%d:Ym:%d: Pixout: %b: RGB: %b:%b:%b", CounterX,CounterY,vmemabus,vmemdbus,Xmod8,Ymod8,pixout,red,green,blue);
 	
-
-assign colabus = vmemabus_Txt1;
+//Hent bakgrunnsfarge når vi er utenfor visningsområdet
+assign colabus = (CounterX==660)?13'd4800:vmemabus_Txt1;
+reg [7:0] bgColour;
+always @(posedge pixclk)
+begin
+	if(CounterX == 661)
+		bgColour <= coldbus;
+	else
+		bgColour <= bgColour;
+end	
 
 //wire [7:0] testvmemd = 82;
 //assign chrabus = (testvmemd*8)+(CounterY % 8);
@@ -128,7 +136,9 @@ assign chrabus = (vmemdbus*8)+(CounterY%8);
 wire [7:0] rowshift = chrdbus << (CounterX%8);
 wire [7:0] pixout = (rowshift & 8'b10000000)?
 					 coldbus :
-					 8'b0;
+					 bgColour;
+//					 8'hC0;
+//					 8'b0;
 
 ////////////////////////////////////////////////////////////////////////
 assign vdataout_Txt1 = pixout;

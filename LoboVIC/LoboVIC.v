@@ -455,14 +455,14 @@ assign cpudbusI = //((cpuabus == 65001) && ~cpuWrite) ? dilswitch :
 						(cpuabus == 65022 && ~cpuWrite && enableFPGAmem)? screenAddr[7:0] :
 						(cpuabus == 65023 && ~cpuWrite && enableFPGAmem)? screenAddr[15:8] :
 						
-						(cpuabus == 16'hffea && ~cpuWrite && enableFPGAmem)? 8'h52 :	//NMI
+						(cpuabus == 16'hffea && ~cpuWrite && enableFPGAmem)? 8'h5d :	//NMI
 						(cpuabus == 16'hffeb && ~cpuWrite && enableFPGAmem)? 8'hd :
-						(cpuabus == 16'hfffa && ~cpuWrite && enableFPGAmem)? 8'h52 :	//NMI
+						(cpuabus == 16'hfffa && ~cpuWrite && enableFPGAmem)? 8'h5d :	//NMI
 						(cpuabus == 16'hfffb && ~cpuWrite && enableFPGAmem)? 8'hd :
 
-						(cpuabus == 16'hffee && ~cpuWrite && enableFPGAmem)? 8'h2e:		//IRQ
+						(cpuabus == 16'hffee && ~cpuWrite && enableFPGAmem)? 8'h39:		//IRQ
 						(cpuabus == 16'hffef && ~cpuWrite && enableFPGAmem)? 8'hd :
-						(cpuabus == 16'hfffe && ~cpuWrite && enableFPGAmem)? 8'h2e:		//IRQ
+						(cpuabus == 16'hfffe && ~cpuWrite && enableFPGAmem)? 8'h39:		//IRQ
 						(cpuabus == 16'hffff && ~cpuWrite && enableFPGAmem)? 8'hd :
 
 						(cpuabus == 16'hfffc && ~cpuWrite && enableFPGAmem)? 8'h0 :		//Reset

@@ -2,7 +2,6 @@
 _xmsgs\pn_parser.xmsgs
 colour_mem.asy
 colour_mem.gise
-colour_mem.mif
 colour_mem.ngc
 colour_mem.sym
 colour_mem.v

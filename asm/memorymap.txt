@@ -6,6 +6,7 @@ Memory map:
 9600	VidmemHi	19200
 E100	Charmmem	2048
 E900	Colourmem	4800
-FBC0	RAM			 320
+FBC0	BGColour	1
+FBC1	RAM			319
 FD00	RAM end	
 FDE8	IO

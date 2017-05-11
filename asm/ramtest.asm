@@ -1,6 +1,6 @@
 #define println(TEXTADR) PHA:LDA #<TEXTADR:STA loAdr:LDA #>TEXTADR:STA hiAdr:JSR prtStr:JSR prtCRLN:PLA
 #define BLT BCC
-#define BGT BCS
+#define BGE BCS
 
 #include io.asm
 #include max3421.asm
@@ -44,6 +44,9 @@ Jiffyclock:
 	.as 
 	.xs
 	
+	LDA #$C0		;Background colour
+	STA $FBC0
+	
 	LDA #0
 	STA Jiffyclock
 	STA Jiffyclock+1
@@ -58,6 +61,7 @@ Jiffyclock:
 	LDA #42
 	STA @$020004
 	
+	JSR prtCRLN
 	LDA @$010000
 	TAX
 	JSR prtHexChr
@@ -67,6 +71,7 @@ Jiffyclock:
 	LDA @$020004
 	TAX
 	JSR prtHexChr
+	JSR prtCRLN
 	
 	;LDX #$FF  ;Kjent verdi for toppen av stacken
 	;TXS
