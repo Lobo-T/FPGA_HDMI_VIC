@@ -80,14 +80,14 @@ Jiffyclock:
 	LDX #0
 	JMP serloop
 tekststart:
-	.asc "Trond Mjåtveit Hansen designer datamaskin"  ;Lang tekst for å fylle UART fifoen
+	.asc "Trond MjÃ¥tveit Hansen designer datamaskin"  ;Lang tekst for Ã¥ fylle UART fifoen
 	.byt 10,13  ;\r\n
 tekstslutt:
 
 serloop
 	LDA #1
 	AND 65004	;Sjekk om UART FIFO er full
-	BNE serloop	;Vent på UART
+	BNE serloop	;Vent pÃ¥ UART
 	LDA tekststart,x
 	STA 65003
 	LDA #1
@@ -120,7 +120,7 @@ serloop
 	JSR wrUSBreg
 	
 	;Get OSCOK
-	;Vent til MAX3421s PLL har låst
+	;Vent til MAX3421s PLL har lÃ¥st
 WAIT_OSC_LOOP:
 	LDX #rUSBIRQ
 	JSR rdUSBreg
@@ -129,7 +129,7 @@ WAIT_OSC_LOOP:
 	;debug
 	println(TXT_OSC_STARTET)
 
-	;Sett host mode.  Slå på pulldown
+	;Sett host mode.  SlÃ¥ pÃ¥ pulldown
 	LDX #rMODE
 	LDY #bmDPPULLDN|bmDMPULLDN|bmHOST
 	JSR wrUSBreg
@@ -384,15 +384,15 @@ XFRrslt:
 	.)
 	;----get desc end---
 	;-Tolk descriptors
-	;Første descriptor skal være en configuration descriptor siden det er det vi har bedt om
+	;FÃ¸rste descriptor skal vÃ¦re en configuration descriptor siden det er det vi har bedt om
 	LDY #usbBuffer
 	STY usbThisDescriptor
 	LDA usbBuffer,y
-	STA usbNextDescriptor	;Ta vare på desc. lengde
+	STA usbNextDescriptor	;Ta vare pÃ¥ desc. lengde
 	TYA
 	CLC
 	ADC usbNextDescriptor
-	STA usbNextDescriptor	;Ta vare på offset for neste descriptor
+	STA usbNextDescriptor	;Ta vare pÃ¥ offset for neste descriptor
 	LDY usbThisDescriptor
 	TYA
 	CLC
@@ -405,7 +405,7 @@ XFRrslt:
 	JSR prtHexChr
 	JSR prtCRLN
 
-	;Neste skal være en Interface descriptor
+	;Neste skal vÃ¦re en Interface descriptor
 SearchInterfaceDesciptor:
 	LDY usbNextDescriptor
 	STY usbThisDescriptor
@@ -448,7 +448,7 @@ SearchInterfaceDesciptor:
 	BNE DescParseError
 	JMP SearchEndpointDescriptor
 
-DescParseError:		;Denne er plassert her i midten for å være innenfor branch lengde
+DescParseError:		;Denne er plassert her i midten for Ã¥ vÃ¦re innenfor branch lengde
 	LDA #00
 	STA usbKbdOK
 	println(TXT_UNKNOWN)
@@ -473,7 +473,7 @@ SearchEndpointDescriptor:
 	JSR prtCRLN
 	CMP #5
 	BNE	SearchEndpointDescriptor
-	;Da skal vi være i første endpoint descriptor.
+	;Da skal vi vÃ¦re i fÃ¸rste endpoint descriptor.
 	INY					;Endpoint Addresse
 	LDA usbBuffer,y
 	AND #%00001111		;Vi er bare interessert i addressen som er i de fire laveste bitene.
@@ -936,7 +936,7 @@ F2END:
 	
 	;Sjekk om F1 er inne
 	LDA #58				;USB keycode for F1
-	CMP KbdKeyArray+2	;Første tast
+	CMP KbdKeyArray+2	;FÃ¸rste tast
 	BNE GetInputAndDraw
 Demo1:
 	LDX CurrChar
@@ -1121,8 +1121,8 @@ spiTXwait2:
 ;Hent nytt tegn fra tastaturet.
 ;Ved ny tast returnerer tegn i Acc og Carry clear
 ;Ved ingen ny tast returnerer Carry set
-;Vi bryr oss kun om første KeyCode.
-;Men hele USB Boot protocol keyboard rapporten vil også være tilgjengelig i KbdKeyArray
+;Vi bryr oss kun om fÃ¸rste KeyCode.
+;Men hele USB Boot protocol keyboard rapporten vil ogsÃ¥ vÃ¦re tilgjengelig i KbdKeyArray
 kbdrd:
 	;Reset transfer done
 	LDX #rHIRQ
@@ -1159,7 +1159,7 @@ rcvLoop2:
 	LDY #bmRCVDAVIRQ	 ;Reset rcv data available IRQ
 	JSR wrUSBreg
 	;Se om det er en ny tast
-	LDY #2		;Offset for første keycode
+	LDY #2		;Offset for fÃ¸rste keycode
 	LDA KbdKeyArray,y
 	CMP KbdLastKey
 	BEQ NoNewKey
@@ -1170,7 +1170,6 @@ rcvLoop2:
 	BEQ CapsLockPressed 
 KbdGoTranslate:
 	JSR KbdTranslate
-	CLC
 	RTS
 NoNewKey:
 	SEC
@@ -1285,7 +1284,7 @@ KbdTranslate:
 	BCS KbdNotPrintable
 	LDA KbdLocks		;Bit 1 inneholder capslock status
 	ORA KbdModifiers	;Fra USB rapport
-	AND #%00100010		;Høyre og venstre shift fra USB keyboard.  Må fikses hvis bit 5 i KbdLocks brukes til noe.
+	AND #%00100010		;HÃ¸yre og venstre shift fra USB keyboard.  MÃ¥ fikses hvis bit 5 i KbdLocks brukes til noe.
 	BNE KbdShift
 	LDA	KbdLookupTable,x
 	CLC
@@ -1303,11 +1302,11 @@ KbdNotPrintable:
 KbdLookupTable:
 	.byt 0,0,0,0
 	.byt "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
-	.byt "1","2","3","4","5","6","7","8","9","0",13,27,8,9,32,"+",92,"å",94,"<","'","ø","æ",124,44,46,"-"
+	.byt "1","2","3","4","5","6","7","8","9","0",13,27,8,9,32,"+",92,"Ã¥",94,"<","'","Ã¸","Ã¦",124,44,46,"-"
 KbdLookupTableShifted:
 	.byt 0,0,0,0
 	.byt "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
-	.byt "!",34,"#","$","%","&","/","(",")","=",13,27,8,9,32,"?","`","Å","~",">","*","Ø","Æ","§",59,58,"_"
+	.byt "!",34,"#","$","%","&","/","(",")","=",13,27,8,9,32,"?","`","Ã…","~",">","*","Ã˜","Ã†","Â§",59,58,"_"
 KbdKeypadLookupTable:
 	.byt "/","*","-","+",13,"1","2","3","4","5","6","7","8","9","0",46,"<"
 ;----------------------------------------------------------------------------------------
